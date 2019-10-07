@@ -1,7 +1,7 @@
 #Tehnologia digitală
 ## Criterii de clasificare
 ### Tehnologie de fabricație
-Considerând tehnologia de fabricație se disting două clase mari de circuite digitale: bipolar și MOS. Diferența între aceste circuite este la nivel fizic, având topologii de circuite diferite, tensiuni de lucru diferite. Însă aceeași porți logice se pot implementa în ambele tehnologii.
+Considerând tehnologia de fabricație se disting două clase mari de circuite digitale: bipolar și MOS. Diferența între aceste circuite este la nivel fizic, având topologii de circuite diferite, tensiuni de lucru diferite. Însă aceeași porți logice se pot implementa în ambele tehnologii. Primele circuite integrate erau realizate folosind tranzistoare bipolare. Tehnologiile bipolare erau de mai multe feluri, familia [ECL](https://en.wikipedia.org/wiki/Emitter-coupled_logic) (Emitter Coupled Logic), [IIL](https://en.wikipedia.org/wiki/Integrated_injection_logic) (Integrated Injection Logic)
 ### Nivele logice
 În general, când se vorbește despre circuite digitale, atunci este vorba de circuite care implementeaza funcții logice booleene (adică cu două nivele de adevăr: adevarat și fals) și folosesc baza binară pentru a reprezenta valorile numerice. Însă circuitele digitale  pot implementa și logică cu trei nivele, logice ternară, și să foloseasca alte baza pentru reprezentarea valorilor. 
 Note: primul calculator ENIAC a folosit baza decimală pentru reprezentarea valorilor. 
