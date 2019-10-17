@@ -3,3 +3,7 @@
 3. Asteptati invitatia la "suport_HDL"
 4. Instalati utilitarul git  de pe https://git-scm.com/download/win
 5. Creati copia locala pe calculatorul d-voastra
+6. modificari
+
+
+
