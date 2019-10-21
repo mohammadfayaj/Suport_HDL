@@ -21,5 +21,39 @@ Funcționarea logică
 
 ### Nivele logice
 În general, când se vorbește despre circuite digitale, atunci este vorba de circuite care implementeaza funcții logice booleene (adică cu două nivele de adevăr: adevarat și fals) și folosesc baza binară pentru a reprezenta valorile numerice. Însă circuitele digitale  pot implementa și logică cu trei nivele, logice ternară, și să foloseasca alte baza pentru reprezentarea valorilor. 
-Note: primul calculator ENIAC a folosit baza decimală pentru reprezentarea valorilor. 
+Notă: primul calculator ENIAC a folosit baza decimală pentru reprezentarea valorilor. 
+
+## Proiectarea sistemelor digitale
+
+###Metode de proiectare a sistemelor digitale
+1. Desenarea schemelor electronice utilizand un editor de circuite electronice (Orcad - Capture CIS)
+- Metoda se poate utiliza la circuite cu numar redus de porti/tranzistoare;
+- Proiectarea schematica nu faciliteaza verificarea logica a circuitelor.
+2. Descrierea structurala/comportamentala a circuitului cu un limbaj de descriere hardware (Hardware Description Language - HDL)
+- schemele electrice sunt generate de un program ;
+- dupa aparitia limbajelor HDL s-au dezvoltat utiliatare pentru sinteza logica a circuitelor (prin sinteza circuitelor se intelege transformarea descrierii comportamentale intr-o diagrama/schema electrica)
+Notă: AMD a introdus in 2019 microprocessorul Epyc Rome cu 32 miliarde de tranzistoare – proiectarea sistemelor cu complexitate ridicata este imposibila fara ajutorul limbajelor HDL
+
+### Uilizarea limbajelor HDL în proiectarea sistemelor digitaleâ
+**Ce sunt limbajele HDL?**
+Limbaje de nivel inalt orientate pentru descrierea/modelarea sistemelor digitale 
+Sunt folosite pentru dezvoltarea/proiectarea sistmelelor ca si limbajele de programare pentru dezvoltarea software-ului
+Sunt folosite pentru a scrie modele clare/neambigue in loc de a folosi  scheme electrice sau o limba naturala
+**La ce sunt folosite HDL-urile?**
+Pentru a modela hardware-ul independent de tehnologia in care urmeaza a fi implementat
+Pentru a simula hardware-ul si a compara cu specificatii
+Pentru a sintetiza modulele HDL in thenologia in care va fi implementat
+**Care sunt cele mai utilizate limbaje HDL?**
+*VHDL*: VHSIC Hardware Description Language (Std. IEEE 1076 since 1987)
+*Verilog*: limbajul de simulare dezvoltat de Cadence (1985) is standardizat ulterior (Std. IEEE 1364 - 1995)
+*SystemC*: o librarie C/C++ folosit pentru modelarea sistemelor digitale
+
+### Stiluri de proiecare
+
+
+![Stiluri de proiectare](https://github.com/botondkirei/Suport_HDL/blob/master/Curs_1/Drawing2.jpg "Stiluri de proiectare")
+
+Stiluri de proiectare
+
+
 
