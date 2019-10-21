@@ -50,10 +50,55 @@ Pentru a sintetiza modulele HDL in thenologia in care va fi implementat
 
 ### Stiluri de proiecare
 
+În zilele noastre, cele mai folosite stiluri de proiectare sunt:
+1. Full custom IC (complet personalizate):
+- Se referă ca „totul”este desenat cu mâna, însă în realitate foarte multe părți sunt realizate folosind proiectarea bazat pe librării standard.
+- Sunt folosite în aplicații unde este nevoie de optimizare, de exemplu în microprocesoare, sau în microcontrollere
+2. Standard cell IC (bazad pe celule standard)
+- Se folosesc cand nu este nevoie de un număr ridicat de bucăți (ca și microprocesorele), însă este nevoie de timp redus de proiectare
+- Densitatea de tranzistoare este mai scăzută, și este mai lent decât un IC full-custom.
+
 
 ![Stiluri de proiectare](https://github.com/botondkirei/Suport_HDL/blob/master/Curs_1/Drawing2.jpg "Stiluri de proiectare")
 
 Stiluri de proiectare
+
+###Fluxul de proiectare cu CAD
+
+Pentru a face față complexității ridicate a sistemelor digitale (o complexitate care se crește împreună cu legea lui Moore) este nevoie de o abordare care împarte problema mare în probleme mai mici. Astfel este nevoie și de nivele de abstractizare. Cu parcurgerea nivelurilor de abstractizare, obținem un proiect mai puțin abstract, mai aproape de realitate. În parcurgerea nivelurilor sunt de ajutor aplicațiile de sinteză și de verificare. Un pas de sinteză aduce design-ul mai aproape de realitate, iar un pas de verificare valizează pasukl făcut.
+
+#### Fluxul de proiectare ASIC
+
+##### Sinteză de nivel înalt (High Level Synthesis)
+Intrare: O descriere a funcționalității dorite a sistemrului, de obicei scris ca un program, într-un limbaj HDL
+Ieșire: structuri le nivelul de transfer a regiștrilor (register transfer level - RTL): automate secvențiale, utnități aritmetico-logică, memorii, magistrale etc.
+
+##### Sinteză logică
+Intrare: ecuații booleane, diagramă de stări
+Ieșire: un netlist - o listă cu porti utilizate și interconnectarea lor
+
+##### Maparea tehnologică
+Intrare: un proiect la nivel de porți independent de tehnologice
+Ieșire: un proiect la nivel de porți folsin tehnologia țintă
+
+##### Verificare formală
+Intrare: sepcifiicațiile pentru un proiect și implementarea proiectului
+Ieșire: se verifică echivalența între specifiație și implementare. Verificare formală însemană că se dovedește echivalența, nu e doar o simulare
+
+##### Generarea tiparului de test (Automatic Test Pattern Generation, ATPG)
+Intrare: un proiect la nivel de porți și o listă de defecțiuni prosibile în circuit, care se doresc a fi detectate.
+Ieșire: tipari de test, care va face ca circuitul să calculeze un răspuns greșit dacă oricare  dintre defecșiuni este prezent în integratul testat.
+
+##### Estimarea de temporizare (Timing Estimation)
+Intrare: un proiect la nivel de porți cu informație de temporizare a porților și firelor utilizate
+Ieșire: estimări de întârziere (căt timp ia ca semnalul sș strebate o poartă)
+
+
+##### Extragerea circuitlui 
+Intrare: măști de fabricație, adică geometria layout-ului 
+Ieșire: olistă cu erorile DRC, si un netlist extras, cu porțile care cu adevărat sunt implemnetate de măști.
+
+#### Fluxul de proiectare FPGA
 
 
 
