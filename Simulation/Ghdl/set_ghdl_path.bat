@@ -13,7 +13,7 @@
 ::
 :: derive installation directory info from batch file location [ ~dp0 => dRIVE pATH 0 ]
 ::
-set GHDL_INSTALL_DIR=%~dp0
+set GHDL_INSTALL_DIR=C:\Users\Bia\Desktop\Suport_HDL\Simulation\Ghdl\
 
 ::
 :: set GHDL library prefix
