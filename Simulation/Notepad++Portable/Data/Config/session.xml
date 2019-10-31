@@ -1,6 +1,8 @@
 <NotepadPlus>
     <Session activeView="0">
-        <mainView activeIndex="0" />
+        <mainView activeIndex="0">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="472" startPos="351" endPos="351" selMode="0" lang="VHDL" encoding="-1" filename="C:\Users\Botix\Downloads\hello.vhd" backupFilePath="" originalFileLastModifTimestamp="1571815044" />
+        </mainView>
         <subView activeIndex="0" />
     </Session>
 </NotepadPlus>
