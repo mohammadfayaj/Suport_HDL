@@ -18,6 +18,7 @@ package list_pkg is
 	    procedure push( variable value : in integer);
         procedure pushc( constant const : in integer);
 	    impure function pop return integer;
+        procedure show;
 	    
 	end protected LIST;
 	
@@ -70,6 +71,16 @@ package body list_pkg is
             end if;
             return value;
         end function;
+        
+        procedure show is
+        	variable ptr : LINK;
+        begin
+        	ptr := mylist;
+        	while ptr /= NULL loop
+            	report integer'image(ptr.value);
+                ptr := ptr.succ;
+            end loop;
+        end procedure;
         
     end protected body LIST;
         

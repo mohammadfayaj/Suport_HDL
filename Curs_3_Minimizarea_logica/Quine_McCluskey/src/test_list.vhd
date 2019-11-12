@@ -17,6 +17,7 @@ begin
 		my_list.push(int);
 		int := 2;
 		my_list.push(int);
+		my_list.show;
 		assert my_list.pop = 2 report "hoops" severity failure;
 		assert my_list.pop = 1 report "hoops" severity failure;
 		assert my_list.pop = 1 report "hoops" severity failure;
