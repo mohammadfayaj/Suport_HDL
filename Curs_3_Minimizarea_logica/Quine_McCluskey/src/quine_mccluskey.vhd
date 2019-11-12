@@ -3,7 +3,9 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 package quine_mccluskey is
+	
 end package;
 
-package body of quine_mccluskey is
-end body;
+package body quine_mccluskey is
+end package body;
+ 
