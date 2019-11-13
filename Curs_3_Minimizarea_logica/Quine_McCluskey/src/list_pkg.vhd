@@ -2,7 +2,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-package list_pkg is 
+package list_pkg is generic (type datatype);
 
 	type ITEM;
 	-- declaration of an access type List_Element_Ptr:
