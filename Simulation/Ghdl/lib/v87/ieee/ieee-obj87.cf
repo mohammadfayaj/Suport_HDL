@@ -1,4 +1,5 @@
 v 3
+<<<<<<< HEAD
 file . "vital_primitives_body.vhd" "20191024131534.000" "20191024162604.547":
   package body vital_primitives at 23( 1096) + 0 on 60;
 file . "vital_timing_body.vhd" "20191024131534.000" "20191024162604.479":
@@ -19,3 +20,25 @@ file . "vital_timing.vhd" "20191024131534.000" "20191024162604.447":
   package vital_timing at 43( 2438) + 0 on 57 body;
 file . "vital_primitives.vhd" "20191024131534.000" "20191024162604.508":
   package vital_primitives at 43( 2352) + 0 on 59 body;
+=======
+file . "vital_primitives_body.vhd" "20140208234658.000" "20191023102539.577":
+  package body vital_primitives at 23( 1074) + 0 on 50;
+file . "vital_timing_body.vhd" "20140208234658.000" "20191023102539.406":
+  package body vital_timing at 22( 1106) + 0 on 48;
+file . "numeric_bit-body.v87" "20140209010526.000" "20191023102539.246":
+  package body numeric_bit at 58( 3090) + 0 on 46;
+file . "numeric_std-body.v87" "20140209010524.000" "20191023102539.066":
+  package body numeric_std at 59( 3089) + 0 on 44;
+file . "std_logic_1164_body.v87" "20140209010524.000" "20191023102538.893":
+  package body std_logic_1164 at 36( 1861) + 0 on 42;
+file . "std_logic_1164.v87" "20140209010524.000" "20191023102538.822":
+  package std_logic_1164 at 36( 1861) + 0 on 41 body;
+file . "numeric_std.v87" "20140209010524.000" "20191023102538.964":
+  package numeric_std at 54( 2839) + 0 on 43 body;
+file . "numeric_bit.v87" "20140209010526.000" "20191023102539.142":
+  package numeric_bit at 54( 2842) + 0 on 45 body;
+file . "vital_timing.vhd" "20140208234658.000" "20191023102539.321":
+  package vital_timing at 43( 2396) + 0 on 47 body;
+file . "vital_primitives.vhd" "20140208234658.000" "20191023102539.481":
+  package vital_primitives at 43( 2310) + 0 on 49 body;
+>>>>>>> d6e8fd22da8a0c187ef2fe8c5baa4e3455a3161a

@@ -1,5 +1,12 @@
 v 3
+<<<<<<< HEAD
 file . "textio_body.v93" "20191024131534.000" "20191024162605.133":
   package body textio at 19( 842) + 0 on 20;
 file . "textio.v93" "20191024131534.000" "20191024162605.103":
   package textio at 20( 914) + 0 on 19 body;
+=======
+file . "textio_body.v93" "20140209010528.000" "20191023102541.102":
+  package body textio at 19( 842) + 0 on 18;
+file . "textio.v93" "20140209010528.000" "20191023102540.998":
+  package textio at 20( 914) + 0 on 17 body;
+>>>>>>> d6e8fd22da8a0c187ef2fe8c5baa4e3455a3161a
