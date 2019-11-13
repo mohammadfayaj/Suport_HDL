@@ -1,5 +1,6 @@
 v 3
 <<<<<<< HEAD
+<<<<<<< HEAD
 file . "std_logic_misc-body.vhd" "20191024131534.000" "20191024162605.069":
   package body std_logic_misc at 18( 640) + 0 on 110;
 file . "std_logic_signed.vhd" "20191024131534.000" "20191024162605.013":
@@ -37,6 +38,8 @@ file . "std_logic_unsigned.vhd" "20191024131534.000" "20191024162604.983":
 file . "std_logic_misc.vhd" "20191024131534.000" "20191024162605.040":
   package std_logic_misc at 18( 640) + 0 on 109 body;
 =======
+=======
+>>>>>>> 2f97fe789c10fa5300f353d1f46f6e1637242d7b
 file . "std_logic_misc-body.vhd" "20140208234658.000" "20191023102540.904":
   package body std_logic_misc at 18( 623) + 0 on 90;
 file . "std_logic_signed.vhd" "20140208234658.000" "20191023102540.738":
@@ -73,4 +76,7 @@ file . "std_logic_unsigned.vhd" "20140208234658.000" "20191023102540.651":
   package body std_logic_unsigned at 83( 4003) + 0 on 86;
 file . "std_logic_misc.vhd" "20140208234658.000" "20191023102540.834":
   package std_logic_misc at 18( 623) + 0 on 89 body;
+<<<<<<< HEAD
 >>>>>>> d6e8fd22da8a0c187ef2fe8c5baa4e3455a3161a
+=======
+>>>>>>> 2f97fe789c10fa5300f353d1f46f6e1637242d7b

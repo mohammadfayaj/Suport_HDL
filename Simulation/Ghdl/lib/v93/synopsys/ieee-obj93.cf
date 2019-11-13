@@ -1,5 +1,6 @@
 v 3
 <<<<<<< HEAD
+<<<<<<< HEAD
 file . "..\ieee\math_complex-body.vhdl" "20191024131534.000" "20191024162606.420":
   package body math_complex at 52( 2748) + 0 on 132;
 file . "..\ieee\math_real-body.vhdl" "20191024131534.000" "20191024162606.363":
@@ -49,6 +50,8 @@ file . "..\ieee\math_real.vhdl" "20191024131534.000" "20191024162606.332":
 file . "..\ieee\math_complex.vhdl" "20191024131534.000" "20191024162606.391":
   package math_complex at 55( 2910) + 0 on 131 body;
 =======
+=======
+>>>>>>> 2f97fe789c10fa5300f353d1f46f6e1637242d7b
 file . "..\ieee\math_complex-body.vhdl" "20140208234658.000" "20191023102544.008":
   package body math_complex at 52( 2697) + 0 on 106;
 file . "..\ieee\math_real-body.vhdl" "20140208234658.000" "20191023102543.887":
@@ -97,4 +100,7 @@ file . "..\ieee\math_real.vhdl" "20140208234658.000" "20191023102543.834":
   package math_real at 54( 2818) + 0 on 103 body;
 file . "..\ieee\math_complex.vhdl" "20140208234658.000" "20191023102543.951":
   package math_complex at 55( 2856) + 0 on 105 body;
+<<<<<<< HEAD
 >>>>>>> d6e8fd22da8a0c187ef2fe8c5baa4e3455a3161a
+=======
+>>>>>>> 2f97fe789c10fa5300f353d1f46f6e1637242d7b
