@@ -22,6 +22,11 @@ package list_pkg is generic (type datatype);
 	    
 	end protected LIST;
 	
+	type implicant is record
+		covering : LINK;
+		used : boolean;
+	end record;
+	
 end package;
 
 package body list_pkg is
