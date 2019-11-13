@@ -22,6 +22,11 @@ package list_pkg is
 	    
 	end protected LIST;
 	
+	type implicant is record
+		covering : LINK;
+		used : boolean;
+	end record;
+	
 end package;
 
 package body list_pkg is
