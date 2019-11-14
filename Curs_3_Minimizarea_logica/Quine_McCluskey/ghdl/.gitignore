@@ -1,0 +1,4 @@
+#exlude all
+*
+#except
+!*.bat
