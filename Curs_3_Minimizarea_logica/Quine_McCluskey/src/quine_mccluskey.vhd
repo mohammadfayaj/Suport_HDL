@@ -5,38 +5,38 @@ package quine_mccluskey is
 
 	type ITEM;
 	
-	type ITEM_LINK is access ITEM;
+	type ITEM_PTR is access ITEM;
 	
 	type ITEM is record
 		value : integer;
-		succ : ITEM_LINK;
+		succ : ITEM_PTR;
 	end record ITEM;
 	
 	type IMPLICANT is record
-		covered : ITEM_LINK;
+		covered : ITEM_PTR;
 		size : integer;
 		used : boolean;
 	end record IMPLICANT;
 	
-	type IMPLICANT_LINK is access IMPLICANT;
+	type IMPLICANT_PTR is access IMPLICANT;
 	
 	type GROUPS is record
 		member : IMPLICANT;
-		succ : IMPLICANT_LINK;
+		succ : IMPLICANT_PTR;
 	end record GROUPS;
 	
-	type GROUPS_LINK is access GROUPS;
+	type GROUPS_PTR is access GROUPS;
 	
 	type COLUMN is record
 		member : GROUPS;
-		succ : GROUPS_LINK;
+		succ : GROUPS_PTR;
 	end record COLUMN;
 	
-	type COLUMN_LINK is access COLUMN;
+	type COLUMN_PTR is access COLUMN;
 	
 	type TABLE is record
 		member : COLUMN;
-		succ : COLUMN_LINK;
+		succ : COLUMN_PTR;
 	end record TABLE;
 	
 	type minimizer is protected
@@ -52,6 +52,7 @@ package body quine_mccluskey is
 
 	type minimizer is protected body 
 		variable myTable : TABLE;
+		variable function_arg_num : integer;
 		procedure load_function is
 			file file_handler     : text open read_mode is "filename.dat";
 			Variable row          : line;
@@ -63,6 +64,8 @@ package body quine_mccluskey is
 			readline(file_handler, row);
 			-- Read value from line: 
 			read(row, v_data_read);
+			function_arg_num := v_data_read;
+			
 			
 		end procedure;
 		
