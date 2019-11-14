@@ -2,3 +2,4 @@
 *
 #except
 !*.bat
+!*.vcd
