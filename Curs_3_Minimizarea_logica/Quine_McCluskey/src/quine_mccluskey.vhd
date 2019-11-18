@@ -54,7 +54,7 @@ package body quine_mccluskey is
 		variable myTable : TABLE;
 		variable function_arg_num : integer;
 		procedure load_function is
-			file file_handler     : text open read_mode is "filename.dat";
+			file file_handler     : text open read_mode is "..\test\functie1.txt";
 			Variable row          : line;
 			Variable v_data_read  : integer;
 		begin
@@ -65,6 +65,7 @@ package body quine_mccluskey is
 			-- Read value from line: 
 			read(row, v_data_read);
 			function_arg_num := v_data_read;
+			report integer'image(v_data_read);
 			
 			
 		end procedure;
