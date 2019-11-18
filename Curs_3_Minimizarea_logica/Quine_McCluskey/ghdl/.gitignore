@@ -1,0 +1,5 @@
+#exlude all
+*
+#except
+!.bat
+!.vcd

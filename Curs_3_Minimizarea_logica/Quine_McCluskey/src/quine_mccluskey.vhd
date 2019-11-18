@@ -53,6 +53,8 @@ package body quine_mccluskey is
 	type minimizer is protected body 
 		variable myTable : TABLE;
 		variable function_arg_num : integer;
+		variable myFunction : ITEM_PTR;
+		
 		procedure load_function is
 			file file_handler     : text open read_mode is "..\test\functie1.txt";
 			Variable row          : line;
@@ -74,7 +76,8 @@ package body quine_mccluskey is
 		begin
 			--todo : compute the order of each implicant
 			-- create groups for each order
-		end procedure;		
+		end procedure;	
+			
 		procedure get_prime_implicants is
 		begin
 			--todo : implement get implicants
