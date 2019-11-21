@@ -1,0 +1,9 @@
+<NotepadPlus>
+    <InternalCommands />
+    <Macros />
+    <UserDefinedCommands>
+        <Command name="Run Simulation" Ctrl="no" Alt="no" Shift="no" Key="117">&quot;$(CURRENT_DIRECTORY)\run.bat&quot;</Command>
+    </UserDefinedCommands>
+    <PluginCommands />
+    <ScintillaKeys />
+</NotepadPlus>

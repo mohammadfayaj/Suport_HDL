@@ -1,0 +1,15 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="7">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="976" startPos="555" endPos="555" selMode="0" lang="VHDL" encoding="-1" filename="D:\Vorlesungen\Digitaltechnik\Uebungen\Vhdl\6_3Zaehler_komplett_Taktgesteuert\Zaehler.vhdl" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1272" startPos="0" endPos="0" selMode="0" lang="VHDL" encoding="-1" filename="D:\Vorlesungen\Digitaltechnik\Uebungen\Vhdl\1_1BitVolladdierer\1BitVolladdierer.vhdl" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1000" startPos="282" endPos="282" selMode="0" lang="VHDL" encoding="-1" filename="D:\Vorlesungen\Digitaltechnik\Uebungen\Vhdl\6_1Zaehler\Zaehler.vhdl" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="168" startPos="25" endPos="25" selMode="0" lang="Normaler Text" encoding="-1" filename="D:\Vorlesungen\Digitaltechnik\Uebungen\Vhdl\6_1Zaehler\sim2.dat" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="704" startPos="317" endPos="317" selMode="0" lang="VHDL" encoding="-1" filename="D:\Vorlesungen\Digitaltechnik\Uebungen\Vhdl\Io\Inverter.vhdl" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1032" startPos="0" endPos="0" selMode="0" lang="VHDL" encoding="-1" filename="D:\Vorlesungen\Digitaltechnik\Uebungen\Vhdl\6_2Zaehler_ohne_Addierer\Zaehler.vhdl" />
+            <File firstVisibleLine="10" xOffset="0" scrollWidth="1104" startPos="1027" endPos="1049" selMode="0" lang="VHDL" encoding="-1" filename="D:\Vorlesungen\Digitaltechnik\Uebungen\Vhdl\6_2Zaehler_ohne_Addierer\tb_file_read.vhdl" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="168" startPos="0" endPos="0" selMode="0" lang="Normaler Text" encoding="-1" filename="D:\Vorlesungen\Digitaltechnik\Uebungen\Vhdl\6_2Zaehler_ohne_Addierer\sim2.dat" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

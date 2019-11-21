@@ -1,0 +1,18 @@
+<NotepadPlus>
+    <Session activeView="0">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <mainView activeIndex="1">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="520" startPos="192" endPos="192" selMode="0" lang="VHDL" encoding="-1" filename="C:\Users\Bia\Desktop\Suport_HDL\Simulation\hello_world.vhd" backupFilePath="" originalFileLastModifTimestamp="1571923420" />
+=======
+        <mainView activeIndex="0">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="472" startPos="351" endPos="351" selMode="0" lang="VHDL" encoding="-1" filename="C:\Users\Botix\Downloads\hello.vhd" backupFilePath="" originalFileLastModifTimestamp="1571815044" />
+>>>>>>> d6e8fd22da8a0c187ef2fe8c5baa4e3455a3161a
+=======
+        <mainView activeIndex="0">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="472" startPos="351" endPos="351" selMode="0" lang="VHDL" encoding="-1" filename="C:\Users\Botix\Downloads\hello.vhd" backupFilePath="" originalFileLastModifTimestamp="1571815044" />
+>>>>>>> 2f97fe789c10fa5300f353d1f46f6e1637242d7b
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

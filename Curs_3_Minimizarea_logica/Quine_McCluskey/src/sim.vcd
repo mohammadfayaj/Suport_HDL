@@ -1,5 +1,5 @@
 $date
-  Mon Nov 18 22:53:14 2019
+  Mon Nov 18 23:04:22 2019
 $end
 $version
   GHDL v0
@@ -9,10 +9,10 @@ $timescale
 $end
 $scope module standard $end
 $upscope $end
-$scope module std_logic_1164 $end
+$scope module textio $end
 $upscope $end
-$scope module list_pkg $end
+$scope module quine_mccluskey $end
 $upscope $end
-$scope module test_list $end
+$scope module testbench_qm $end
 $upscope $end
 $enddefinitions $end

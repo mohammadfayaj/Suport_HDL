@@ -10,6 +10,7 @@ begin
 
 process begin
 	min.load_function;
+	assert false report "end sim" severity failure;
 end process;
 
 
