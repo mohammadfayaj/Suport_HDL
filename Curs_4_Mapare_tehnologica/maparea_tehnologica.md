@@ -10,5 +10,6 @@ O solutie posibila pentru maparea tehnologica este oferit de un procedeu denumit
 ### Reprezentarea
 Orice functie booleana se poate implementa folosind doar porti inverosare si porti NAND. Astfel retelele logice boolene sunt convertite in retele de INV si NAND. Pentru o reprezentare a retelelor booleene si mai simple se foloseste urmatoarea reprezentare. O operatie de negare este notat cu o bulinuta neagra, o operate de NAND este inlocuit cu o bulinuta alba, iar un port de intrare este reprezentat de un patratel. 
 ![reprezente](reprezentarea.svg)
+*Fig. 1: reprezentarea portilor intr-o arbore*
 
 
