@@ -1,6 +1,7 @@
 use std.textio.all;
 library work;
 use work.quine_mccluskey.all;
+
 entity testbench_qm is
 end entity testbench_qm;
 
@@ -10,6 +11,8 @@ begin
 
 process begin
 	min.load_function;
+	min.print;
+	wait;
 end process;
 
 
