@@ -11,7 +11,13 @@ begin
 
 process begin
 	min.load_function;
+
 	min.print;
+	
+
+	min.initTestList;
+
+	assert false report "end sim" severity failure;
 	wait;
 end process;
 

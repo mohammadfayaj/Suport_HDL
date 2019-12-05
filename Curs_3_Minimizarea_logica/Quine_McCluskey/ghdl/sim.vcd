@@ -1,5 +1,5 @@
 $date
-  Wed Nov 13 17:53:05 2019
+  Mon Nov 18 22:53:14 2019
 $end
 $version
   GHDL v0
@@ -7,4 +7,12 @@ $end
 $timescale
   1 fs
 $end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module list_pkg $end
+$upscope $end
+$scope module test_list $end
+$upscope $end
 $enddefinitions $end
