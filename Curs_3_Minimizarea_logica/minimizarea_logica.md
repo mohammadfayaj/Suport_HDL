@@ -12,3 +12,5 @@
 3. Minimizare multinivel [mvsis](https://ddd.fit.cvut.cz/Download/mvsis-win.zip)
 4. Minimizare multinivel [sis](https://ddd.fit.cvut.cz/Download/sis_DOS.zip)
 4. [others](https://ddd.fit.cvut.cz/index.php?page=download)
+
+Instructiuni utilizzre [sis](https://user.eng.umd.edu/~gangqu/ToVictoria/tutorial-www_diit_unict_it_introduzione_sis.pdf)
