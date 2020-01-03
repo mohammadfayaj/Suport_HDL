@@ -56,7 +56,8 @@
      * Introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
      * Tipul primar de dată std_ulogic (standard unresolved logic), alcătuit din nouă litere în următoarea ordine:
      
-     <b> 1. 'U' - neinițializat (valoare implicită)
+<b> 
+ 1. 'U' - neinițializat (valoare implicită)
  2. 'X' - drive puternic, logică necunoscută
  3. '0' - drive puternic, zero logic
  4. '1' - drive puternic, unu logic
@@ -64,7 +65,20 @@
  6. 'W' - drive slab, logică necunoscută
  7. 'L' - drive slab, zero logic
  8. 'H' - drive slab, unu logic
- 9. '-' - don't care (nu contează)</b>
+ 9. '-' - don't care (nu contează)
+</b>
+
+   * std_ulogic, subtipurile (std_logic, std_logic_vector, std_ulogic_vector) și valorile lor pot fi cageorizate prin statusul și puterea lor (forțare, impedanță mică și impedanță mare)
+   * Puterea slabă este folosită pentru intrări de tip multi-driver pentru pullup/pulldown
+   * Date de tip std_ulogic, posibile valori și puterea lor
+   
+   | Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+   
+  
  
    
        
