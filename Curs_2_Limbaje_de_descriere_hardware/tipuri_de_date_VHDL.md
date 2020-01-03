@@ -56,16 +56,16 @@
      * Introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
      * Tipul primar de dată std_ulogic (standard unresolved logic), alcătuit din nouă litere în următoarea ordine:
      
-<b> 
- 1. 'U' - neinițializat (valoare implicită) |
- 2. 'X' - drive puternic, logică necunoscută
- 3. '0' - drive puternic, zero logic
- 4. '1' - drive puternic, unu logic
- 5. 'Z' - impedanță mare (pentru logică tri-state)
- 6. 'W' - drive slab, logică necunoscută
- 7. 'L' - drive slab, zero logic
- 8. 'H' - drive slab, unu logic
- 9. '-' - don't care (nu contează) </b>
+
+ 1. <b>  'U' - neinițializat (valoare implicită) </b>
+ 2. <b>  'X' - drive puternic, logică necunoscută </b>
+ 3. <b> '0' - drive puternic, zero logic </b>
+ 4. <b>  '1' - drive puternic, unu logic </b>
+ 5. <b>  'Z' - impedanță mare (pentru logică tri-state) </b>
+ 6. <b>  'W' - drive slab, logică necunoscută </b>
+ 7. <b>  'L' - drive slab, zero logic </b>
+ 8. <b>  'H' - drive slab, unu logic </b>
+ 9. <b>  '-' - don't care (nu contează) </b>
 
    * std_ulogic, subtipurile (std_logic, std_logic_vector, std_ulogic_vector) și valorile lor pot fi categorizate prin starea și puterea lor (forțare, impedanță mică și impedanță mare)
    * Puterea slabă este folosită pentru intrări de tip multi-driver pentru pullup/pulldown
