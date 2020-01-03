@@ -13,12 +13,21 @@
       * Dezvoltat de Intermetics, IBM și Texas Instruments pentru Forța Aeriană a Statelor Unite
       * Prima verziune era 1076-1987
       * Revăzut în 1993, 2000, 2002 și 2008
+      
+  * Pachetul standard al librărieri std (implicit inclus):
+  
+    * tip bit (0, 1)
+    * vectori bit (semnal de grup multi-bit --> bus
 
-
-
-Exemple
+    * Exemple
 ```VHDL
 – SIGNAL x: BIT;
 – SIGNAL y: BIT_VECTOR (3 DOWNTO 0);
 – SIGNAL w: BIT_VECTOR (0 TO 7);
 ```
+
+    * Operator de atribuire a semnalului <=
+    
+      * x <= '1';
+      * y <= "0111";
+      * w <= "01110001";
