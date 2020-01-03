@@ -27,7 +27,7 @@
 ```
 
 
-   * Operator de atribuire a semnalului <=
+   * Operator de atribuire a semnalului <r><=</r>
 ```VHDL
       - x <= '1';
       - y <= "0111";
