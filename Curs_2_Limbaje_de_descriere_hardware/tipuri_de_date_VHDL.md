@@ -71,7 +71,7 @@
    * Puterea slabă este folosită pentru intrări de tip multi-driver pentru pullup/pulldown
    * Date de tip std_ulogic, posibile valori și puterea lor
    
-| Valoare       | Stare         | Cool  | Comentariu |
+| Valoare       | Stare         | Putere  | Comentariu |
 | ------------- |:-------------:| -----:|:----------:|
 | U      | Neinițializat | - | Valoare implicită înainte de simulare |
 | X      | Necunoscut | Forțat | Reprezintă semnalele drived al călor valori nu poate fi determinat ca 1 sau 0 |
@@ -105,6 +105,7 @@
   * Tabel de rezoluție std_logic
   
 |   | | X | 0 | 1 | Z | W | L | - |   |
+| ------------- |:--:| :--:|:--:| :--:|:--:|:--:|:--:|:--:| -----:|
 |   | |   |   |   |   |   |   |   |   |
 | X | | X | X | X | X | X | X | X | X |
 | 0 | | X | 0 | X | 0 | 0 | 0 | 0 | X |
