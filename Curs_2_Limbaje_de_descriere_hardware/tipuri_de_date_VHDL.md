@@ -14,6 +14,8 @@
       * Prima verziune era 1076-1987
       * Revăzut în 1993, 2000, 2002 și 2008
       
+ Tabel1
+      
   * <b>Pachetul standard al librărieri std (implicit inclus):</b>
   
     * tip bit (0, 1)
@@ -94,6 +96,8 @@
   * Declarate întotdeauna cu ajutorul unei funcții de rezoluție (din interiorul librăriei)
   * Funcția de rezoluție definește toate combinațiile posibile de la una sau mai ulte valori de surse și rezultatul corespunzător
   
+  FIG 2
+  
 * std_logic (este de tip resolved)
   * Subtip al std_ulogic
   * Declarat în pachetul STD_LOGIC_1164 din librăria IEEE ca
@@ -128,7 +132,61 @@
 * O matrice este mulțimea obiectelor de aceasi tip
 * Poate fi unidimensional (1D) sau bidimensional (2D)
 * Matrici de dimensiuni mai mari nu pot fi sintentizate
-* <b> Réka este o fetiță cuminte si mă bucur că invață lăngă mine </b>
+
+FIG 2
+
+* <b> Definirea matricilor VHDL </b>
+   * Prima dată definim un nou tip de date
+   * Apoi declarăm un semnal, o variabilă sau constantă de tipul definit anterior
+ 
+ * <b> Formatul general al definirii unei matrici </b>
+ 
+ ```VHDL
+TYPE type_name IS ARRAY (specification) OF data_type;
+SIGNAL signal_name: type_name [:= initial_value];
+
+```
+
+* <b> Exemple </b>
+
+ ```VHDL
+TYPE row IS ARRAY (7 DOWNTO 0) OF STD_LOGIC;
+```
+
+  * Definește o linie (matrice 1D) (tip de date) cu șapte valori STD_LOGIC cu MSB (bitul cel mai semnificativ) la stânga
+  
+ ```VHDL
+TYPE matrix IS ARRAY (0 TO 3) OF row;
+```
+
+  * Definește o matrice 1Dx1D cu 4 linii definite în linia precedentă
+  
+ ```VHDL
+SIGNAL x: matrix;
+```
+  * Definește un semnal 1Dx1D de tip matrice, definit în linia precedentă
+  
+* <b> Exemplu: Matrice 1Dx1D --- metodă alternativă  </b>
+
+ ```VHDL
+TYPE matrix IS ARRAY (0 TO 3) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+```
+
+* <b> Exemplu: Matrice 2D </b>
+
+ ```VHDL
+ TYPE matrix2D IS ARRAY (0 TO 3, 7 DOWNTO 0) OF STD_LOGIC;
+```
+  * Construcția matricii nu este bazată pe vectori, ci numai pe scalari
+  * Este o matrice bidimensională de scalari
+  
+
+
+  
+  
+ 
+ 
+
 
 
   
