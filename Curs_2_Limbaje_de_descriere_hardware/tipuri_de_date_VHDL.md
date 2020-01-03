@@ -14,7 +14,7 @@
       * Prima verziune era 1076-1987
       * Revăzut în 1993, 2000, 2002 și 2008
       
-  * Pachetul standard al librărieri std (implicit inclus):
+  * <b>Pachetul standard al librărieri std (implicit inclus):</b>
   
     * tip bit (0, 1)
     * vectori bit (semnal de grup multi-bit --> bus
@@ -28,8 +28,8 @@
 
 
    * Operator de atribuire a semnalului <=
-    ```VHDL
+```VHDL
       - x <= '1';
       - y <= "0111";
       - w <= "01110001";
-     ```
+```
