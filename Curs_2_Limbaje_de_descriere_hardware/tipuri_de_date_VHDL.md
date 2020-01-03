@@ -77,9 +77,9 @@
 | 0 | 0 | Forțat | Reprezintă semnale de la driverele active de la ieșire |
 | 1 | 1 | Forțat | Reprezintă semnale de la driverele active de la ieșire |
 | Z | - | Impedanță înaltă | Reprezintă ieșirea buffer-ului tri-state când nu este activ |   
-| W | Necunoscut | Slab | Reprezintă semnale de la 
-| L | 0 | Slab | drivere rezistive de ex. 
-| H | 1 | Slab | rezistențe pull-up și pull-down |
+| W | Necunoscut | Slab | Reprezintă semnale de la drivere rezistive de ex. rezistențe pull-up și pull-down |
+| L | 0 | Slab |  Reprezintă semnale de la drivere rezistive de ex. rezistențe pull-up și pull-down |
+| H | 1 | Slab | rezistențe pull-up și pull-down | Reprezintă semnale de la drivere rezistive de ex. rezistențe pull-up și pull-down |
 | - | Don't care | - | Permite sintetizatorului să decidă dacă atribuie 0 sau 1 pentru un circuit logic minim sintetizat | 
 
    
