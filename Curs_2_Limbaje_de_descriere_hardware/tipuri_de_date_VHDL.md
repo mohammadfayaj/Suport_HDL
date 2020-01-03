@@ -56,8 +56,8 @@
      * Introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
      * Tipul primar de dată std_ulogic (standard unresolved logic), alcătuit din nouă litere în următoarea ordine:
      
-<b> 1. 'U' - neinițializat (valoare implicită)
- 2. 'X' - drive puternic, logică necunoscută
+<b> 1. 'U' - neinițializat (valoare implicită) </b>
+<b> 2. 'X' - drive puternic, logică necunoscută
  3. '0' - drive puternic, zero logic
  4. '1' - drive puternic, unu logic
  5. 'Z' - impedanță mare (pentru logică tri-state)
