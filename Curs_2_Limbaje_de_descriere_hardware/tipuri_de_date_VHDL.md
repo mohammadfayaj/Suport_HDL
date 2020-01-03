@@ -15,6 +15,7 @@
       * Revăzut în 1993, 2000, 2002 și 2008
 
 
+
 Exemple
 ```VHDL
 – SIGNAL x: BIT;
