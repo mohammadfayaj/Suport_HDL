@@ -115,6 +115,22 @@
 | L | | X | 0 | 1 | L | W | L | W | X |
 | H | | X | 0 | 1 | H | W | W | H | X |
 | - | | X | X | X | X | X | X | X | X |
+
+* <b> Exemple de declarare std_logic </b>
+ ```VHDL
+– SIGNAL x: STD_LOGIC;
+– SIGNAL y: STD_LOGIC_VECTOR (3 DOWNTO 0) := "0001";
+
+```
+
+# Tipuri de date VHDL: Matrici 
+
+* O matrice este mulțimea obiectelor de aceasi tip
+* Poate fi unidimensional (1D) sau bidimensional (2D)
+* Matrici de dimensiuni mai mari nu pot fi sintentizate
+* <b> Réka este o fetiță cuminte si mă bucur că invață lăngă mine </b>
+
+
   
   
 
