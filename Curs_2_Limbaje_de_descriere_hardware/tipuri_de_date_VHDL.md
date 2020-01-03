@@ -26,7 +26,8 @@
 – SIGNAL w: BIT_VECTOR (0 TO 7);
 ```
 
-    * Operator de atribuire a semnalului <=
+
+   * Operator de atribuire a semnalului <=
     
       * x <= '1';
       * y <= "0111";
