@@ -81,7 +81,42 @@
 | W | Necunoscut | Slab | Reprezintă semnale de la drivere rezistive de ex. rezistențe pull-up și pull-down |
 | L | 0 | Slab |  Reprezintă semnale de la drivere rezistive de ex. rezistențe pull-up și pull-down |
 | H | 1 | Slab | rezistențe pull-up și pull-down | Reprezintă semnale de la drivere rezistive de ex. rezistențe pull-up și pull-down |
-| - | Don't care | - | Permite sintetizatorului să decidă dacă atribuie 0 sau 1 pentru un circuit logic minim sintetizat | 
+| - | Don't care | - | Permite sintetizatorului să decidă dacă atribuie 0 sau 1 pentru un circuit logic minim sintetizat |
+
+* std_ulogic
+  * Tip de dată unresolved
+  * Declarat în pachetul STD_LOGIC_1164 din librăria IEEE
+  * Toate semnalele de dată sunt de tip unresolved, implicit
+  * Semnalele de dată de tip unresolved nu pot fi drived de mai mult de un driver (dacă adaugăm mai multe surse, va rezulta o eroare de compilare)
+  * Verifică dacă nu cumva designerul a atribuit, din greșeală, două surse la aceași semnal
+  
+* Tipuri de date resolved
+  * Declarate întotdeauna cu ajutorul unei funcții de rezoluție (din interiorul librăriei)
+  * Funcția de rezoluție definește toate combinațiile posibile de la una sau mai ulte valori de surse și rezultatul corespunzător
+  
+* std_logic (este de tip resolved)
+  * Subtip al std_ulogic
+  * Declarat în pachetul STD_LOGIC_1164 din librăria IEEE ca
+  
+       ```VHDL
+       subtype std_logic is resolved std_ulogic;
+       ```
+  * Este specificat o funcție de rezoluție numit "resolved"
+  * Tabel de rezoluție std_logic
+  
+|   | | X | 0 | 1 | Z | W | L | - |   |
+|   | |   |   |   |   |   |   |   |   |
+| X | | X | X | X | X | X | X | X | X |
+| 0 | | X | 0 | X | 0 | 0 | 0 | 0 | X |
+| 1 | | X | X | 1 | 1 | 1 | 1 | 1 | X |
+| Z | | X | 0 | 1 | Z | W | L | H | X |
+| W | | X | 0 | 1 | W | W | W | W | X |
+| L | | X | 0 | 1 | L | W | L | W | X |
+| H | | X | 0 | 1 | H | W | W | H | X |
+| - | | X | X | X | X | X | X | X | X |
+  
+  
+
 
    
   
