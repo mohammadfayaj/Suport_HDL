@@ -27,9 +27,33 @@
 ```
 
 
-   * Operator de atribuire a semnalului <r><=</r>
+   * Operator de atribuire a semnalului <b><=</b>
 ```VHDL
       - x <= '1';
       - y <= "0111";
       - w <= "01110001";
 ```
+   
+   * BOOLEAN (ADEVĂRAT, FALS)
+     * Exemplu:
+     ```VHDL
+       - variable VAR1: boolean := FALSE;
+       ```
+       
+   * INTEGER (32 bit, de la -2,147,483,647 până +2,147,483,647)
+     * Exemplu:
+     ```VHDL
+       - SIGNAL SUM: integer range 0 to 256 :=16;
+       ```
+       
+   * REAL (de la -1.0E38 până +1.0E38)
+     * Exemplu:
+     ```VHDL
+       - constant PI : real := 3.14159;
+       ```
+       
+     
+       
+    
+       
+    
