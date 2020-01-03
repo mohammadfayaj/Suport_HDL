@@ -56,8 +56,7 @@
      * Introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
      * Tipul primar de dată std_ulogic (standard unresolved logic), alcătuit din nouă litere în următoarea ordine:
      
-<b> 
- 1. 'U' - neinițializat (valoare implicită)
+<b> 1. 'U' - neinițializat (valoare implicită)
  2. 'X' - drive puternic, logică necunoscută
  3. '0' - drive puternic, zero logic
  4. '1' - drive puternic, unu logic
@@ -65,18 +64,24 @@
  6. 'W' - drive slab, logică necunoscută
  7. 'L' - drive slab, zero logic
  8. 'H' - drive slab, unu logic
- 9. '-' - don't care (nu contează)
-</b>
+ 9. '-' - don't care (nu contează) </b>
 
-   * std_ulogic, subtipurile (std_logic, std_logic_vector, std_ulogic_vector) și valorile lor pot fi cageorizate prin statusul și puterea lor (forțare, impedanță mică și impedanță mare)
+   * std_ulogic, subtipurile (std_logic, std_logic_vector, std_ulogic_vector) și valorile lor pot fi categorizate prin starea și puterea lor (forțare, impedanță mică și impedanță mare)
    * Puterea slabă este folosită pentru intrări de tip multi-driver pentru pullup/pulldown
    * Date de tip std_ulogic, posibile valori și puterea lor
    
-   | Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Valoare       | Stare         | Cool  | Comentariu |
+| ------------- |:-------------:| -----:|:----------:|
+| U      | Neinițializat | - | Valoare implicită înainte de simulare |
+| X      | Necunoscut | Forțat | Reprezintă semnalele drived al călor valori nu poate fi determinat ca 1 sau 0 |
+| 0 | 0 | Forțat | Reprezintă semnale de la driverele active de la ieșire |
+| 1 | 1 | Forțat | Reprezintă semnale de la driverele active de la ieșire |
+| Z | - | Impedanță înaltă | Reprezintă ieșirea buffer-ului tri-state când nu este activ |   
+| W | Necunoscut | Slab | Reprezintă semnale de la |
+| L | 0 | Slab | drivere rezistive de ex. |
+| H | 1 | Slab | rezistențe pull-up și pull-down |
+| - | Don't care | - | Permite sintetizatorului să decidă dacă atribuie 0 sau 1 pentru un circuit logic minim sintetizat | 
+
    
   
  
