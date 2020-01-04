@@ -361,8 +361,51 @@ w(1, 5 DOWNTO 1) <= v(2)(4 DOWNTO 0);
 | entity | nor      |   sra |  | 
 |  | not     |   srl |  | 
 
+# Tipuri de Date: Subiecte Avansate
 
+* Pachetul std_logic_arith din librăria IEEE
+  * Definește tipuri de date SIGNED și UNSIGNED și multiple funcții de conversie de date ca:
+    * conv_integer(p), 
+    * conv_unsigned(p, b),
+    * conv_signed(p, b), and
+    * conv_std_logic_vector(p, b).
+  * Permit operațiuni aritmetice
+  * Conversia de date va fi discutat mai târziu
+  
+* Pachetele std_logic_signed și std_logic_unsigned din librăria IEEE:
 
+  * Conțin funcții care permit operațiuni cu date STD_LOGIC_VECTOR să fie efectuat ca fiind de tip SIGNED sau UNSIGNED
+  
+
+# Tipuri de Date VHDL definite de utilizator
+
+* Tipuri de date întregi (integer) definite de utilizator
+  * Subtip al Integer
+  * Exemple:
+  
+ ```VHDL
+– TYPE integer IS RANGE -2147483647 TO +2147483647;
+– TYPE my_integer IS RANGE -32 TO 32;
+– -- A user-defined subset of integers.
+– TYPE student_grade IS RANGE 0 TO 100;
+– -- A user-defined subset of integers or naturals.
+– TYPE natural IS RANGE 0 TO +2147483647;
+```
+
+* Tipuri de date ENUMARATED definite de utilizator
+  * Tip de date alcătuit de o mulțime de valori numite
+  * Exemple:
+ 
+```VHDL
+– TYPE bit IS ('0', '1');
+– TYPE my_logic IS ('0', '1', 'Z');
+- -- BIT predefinit
+
+TYPE bit_vector IS ARRAY (NATURAL RANGE <>) OF BIT;
+- -- BIT_VECTOR predefinit
+- -- NATURAL RANGE <> indică faptul că singura restricție este că intervalul trebuie sa fie în interiorul lui NATURAL range
+```
+  
 
 
 
