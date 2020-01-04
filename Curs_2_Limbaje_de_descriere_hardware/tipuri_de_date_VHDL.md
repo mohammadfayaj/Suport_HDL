@@ -301,13 +301,72 @@ w(1, 5 DOWNTO 1) <= v(2)(4 DOWNTO 0);
 
 | Operațiune logică        | Operator         | Exemplu  |
 | ------------- |:-------------:| -----:|
-| ȘI      | AND | Z <= (A AND B; |
-| ȘI-NU      | NAND      |  Z <= (A NAND B;  |
-| SAU-NU | NOR      |   Z <= (A NOR B; |
+| ȘI      | AND | Z <= (A AND B;) |
+| ȘI-NU      | NAND      |  Z <= (A NAND B;)  |
+| SAU-NU | NOR      |   Z <= (A NOR B;) |
 | NU | NOT | Z <= NOT (A); |
-| SAU| OR | Z <= (A OR B; |
-| SAU-EXCLUSIV NEGAT | XNOR | Z <= (A XNOR B; |
-| SAU-EXCLUSIV | XOR | Z <= (A XOR B; |
+| SAU| OR | Z <= (A OR B;) |
+| SAU-EXCLUSIV NEGAT | XNOR | Z <= (A XNOR B;) |
+| SAU-EXCLUSIV | XOR | Z <= (A XOR B;) |
+
+* Operatori aritmetici
+
+| Operațiune aritmetică       | Operator         | Exemplu  |
+| ------------- |:-------------:| -----:|
+| Adunare      | + | Z <= A + B; |
+| Scădere      | -      |  Z <= A - B;  |
+| Multiplicare | *      |   Z <= A * B; |
+| Divizare | / | Z <= A / B; |
+| Exponențiare | ** | Z <= 4 ** 2; |
+| Modul | MOD | Z <= A MOD B; |
+| Rest | REM | Z <= A REM B; |
+| Valoare absolută | ABS | Z <= ABS A; |
+
+
+* Operatori relaționale
+ 
+| Operațiune relațională       | Operator         | Exemplu  |
+| ------------- |:-------------:| -----:|
+| Egal cu      | = | If (A = B) Then |
+| Nu ese egal cu      | /= |  If (A /= B) Then |
+| Mai mic ca |  <    |   If (A < B) Then |
+| Mai mic sau egal cu | <= | If (A <= B) Then |
+| Mai mare ca | > | If (A > B) Then |
+| Mai mare sau egal cu | >= | If (A >= B) Then |
+
+# Cuvinte rezervate VHDL
+
+* Cuvintele rezervate nu pot fi folosite de designer pentru identificatori ca variabile, nume de semnal, etc.
+
+| abs        | file          | of  | then | 
+| ------------- |:-------------:| :----:| ---: | 
+| after      | for | open | to | 
+| all      |      |   or | transport | 
+| and | generic     |    others | type | 
+| architecture      |  | out |  | 
+| array    | if     |    | until | 
+|  | in | package | use | 
+| begin   | inertial | port | | 
+|       | inout    |   process | variable | 
+| case | is      |     |  | 
+| component      |  | rem | wait | 
+| configuration     | library      |   report | when |  
+| constant | linkage      |   rol | while | 
+|  | loop | ror| with | 
+| downto   |  |  | | 
+|       | mod    |   select | xnor | 
+| else |      |  signal   | xor  | 
+| elsif      | nand | sla |  | 
+| end     | next      |   sll |  |  
+| entity | nor      |   sra |  | 
+|  | not     |   srl |  | 
+
+
+
+
+
+
+
 
 
 
