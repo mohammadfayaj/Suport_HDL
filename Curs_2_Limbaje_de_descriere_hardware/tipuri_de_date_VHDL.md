@@ -180,6 +180,149 @@ TYPE matrix IS ARRAY (0 TO 3) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
   * Construcția matricii nu este bazată pe vectori, ci numai pe scalari
   * Este o matrice bidimensională de scalari
   
+  
+ # Tipuri de date VHDL: Atribuire Matrici
+ 
+ * <b> Definire Tip: </b>
+ 
+ ```VHDL
+ TYPE row IS ARRAY (7 DOWNTO 0) OF STD_LOGIC; -- 1D array
+TYPE array1 IS ARRAY (0 TO 3) OF row; -- 1Dx1D array
+```
+
+* <b> Declarare Semnal: </b>
+ 
+ ```VHDL
+SIGNAL x: row;
+SIGNAL y: array1;
+```
+
+* <b> Atribuire Semnal Scalar (matrice): </b>
+ 
+ ```VHDL
+x(0) <= y(1)(2);
+```
+  * Notăm cele două perechi de paranteze, deoarece y este o matrice 1Dx1D
+  
+
+ * <b> Definire Tip: </b>
+ 
+ ```VHDL
+TYPE array2 IS ARRAY (0 TO 3) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+ -- 1Dx1D
+TYPE array3 IS ARRAY (0 TO 3, 7 DOWNTO 0) OF STD_LOGIC;
+ -- 2D array
+```
+
+* <b> Declarare Semnal: </b>
+ 
+ ```VHDL
+SIGNAL v: array2;
+SIGNAL w: array3;
+```
+
+* <b> Atribuire Semnal Scalar: </b>
+ 
+ ```VHDL
+x(1) <= v(2)(3);
+x(2) <= w(2,1);
+```
+  * O singură pereche de paranteze, deoarece w este o matrice 2D
+  
+ ```VHDL
+TYPE row IS ARRAY (7 DOWNTO 0) OF STD_LOGIC;
+TYPE array1 IS ARRAY (0 TO 3) OF row;
+TYPE array2 IS ARRAY (0 TO 3) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+TYPE array3 IS ARRAY (0 TO 3, 7 DOWNTO 0) OF STD_LOGIC;
+```
+
+* <b> Declarare Semnal: </b>
+ 
+ ```VHDL
+SIGNAL x: row;
+SIGNAL y: array1;
+SIGNAL v: array2;
+SIGNAL w: array3;
+```
+
+* <b> Atribuire Semnal Scalar: </b>
+ 
+ ```VHDL
+y(1)(1) <= x(6);
+y(2)(0) <= v(0)(0);
+y(0)(0) <= w(3,3);
+w(1,1) <= x(7);
+w(3,0) <= v(0)(3);
+```
+
+* <b> Atribuire Semnal Vector: </b>
+ 
+ ```VHDL
+TYPE row IS ARRAY (7 DOWNTO 0) OF STD_LOGIC;
+TYPE array1 IS ARRAY (0 TO 3) OF row;
+TYPE array2 IS ARRAY (0 TO 3) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+TYPE array3 IS ARRAY (0 TO 3, 7 DOWNTO 0) OF STD_LOGIC;
+```
+* <b> Declarare Semnal: </b>
+ 
+ ```VHDL
+SIGNAL x: row;
+SIGNAL y: array1;
+SIGNAL v: array2;
+SIGNAL w: array3;
+
+```
+
+* <b> Atribuiri legale/permise: </b>
+
+ ```VHDL
+x <= y(0);
+y(1)(7 DOWNTO 3) <= x(4 DOWNTO 0);
+v(1)(7 DOWNTO 3) <= v(2)(4 DOWNTO 0);
+
+```
+
+* <b> De ce sunt următoarele atribuiri nepermise/ilegale? </b>
+ 
+ ```VHDL
+x <= v(1);
+x <= w(2);
+x <= w(2, 2 DOWNTO 0);
+v(0) <= w(2, 2 DOWNTO 0);
+v(0) <= w(2);
+y(1) <= v(3);
+w(1, 5 DOWNTO 1) <= v(2)(4 DOWNTO 0);
+```
+
+
+# Operatori VHDL
+
+* Operatori logice
+
+| Operațiune logică        | Operator         | Exemplu  |
+| ------------- |:-------------:| -----:|
+| ȘI      | AND | Z <= (A AND B; |
+| ȘI-NU      | NAND      |  Z <= (A NAND B;  |
+| SAU-NU | NOR      |   Z <= (A NOR B; |
+| NU | NOT | Z <= NOT (A); |
+| SAU| OR | Z <= (A OR B; |
+| SAU-EXCLUSIV NEGAT | XNOR | Z <= (A XNOR B; |
+| SAU-EXCLUSIV | XOR | Z <= (A XOR B; |
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
 
 
   
