@@ -406,7 +406,7 @@ TYPE bit_vector IS ARRAY (NATURAL RANGE <>) OF BIT;
 - -- NATURAL RANGE <> indică faptul că singura restricție este că intervalul trebuie sa fie în interiorul lui NATURAL range
 ```
 
-  * Mai multe exmemple:
+  * Mai multe exemple:
   
   ```VHDL
 -TYPE state IS (idle, forward, backward, stop); 
