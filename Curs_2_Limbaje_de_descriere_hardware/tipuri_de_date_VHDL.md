@@ -14,7 +14,7 @@
       * Prima verziune era 1076-1987
       * Revăzut în 1993, 2000, 2002 și 2008
       
- Tabel1
+ VISIO1
       
   * <b>Pachetul standard al librărieri std (implicit inclus):</b>
   
@@ -96,7 +96,7 @@
   * Declarate întotdeauna cu ajutorul unei funcții de rezoluție (din interiorul librăriei)
   * Funcția de rezoluție definește toate combinațiile posibile de la una sau mai ulte valori de surse și rezultatul corespunzător
   
-  FIG 2
+VISIO 2
   
 * std_logic (este de tip resolved)
   * Subtip al std_ulogic
@@ -133,7 +133,7 @@
 * Poate fi unidimensional (1D) sau bidimensional (2D)
 * Matrici de dimensiuni mai mari nu pot fi sintentizate
 
-FIG 2
+VISIO 3
 
 * <b> Definirea matricilor VHDL </b>
    * Prima dată definim un nou tip de date
