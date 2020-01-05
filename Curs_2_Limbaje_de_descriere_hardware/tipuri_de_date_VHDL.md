@@ -405,6 +405,185 @@ TYPE bit_vector IS ARRAY (NATURAL RANGE <>) OF BIT;
 - -- BIT_VECTOR predefinit
 - -- NATURAL RANGE <> indică faptul că singura restricție este că intervalul trebuie sa fie în interiorul lui NATURAL range
 ```
+
+  * Mai multe exmemple:
+  
+  ```VHDL
+-TYPE state IS (idle, forward, backward, stop); 
+--Un tip de date ENUMERATED, tipic pentru mașini cu stări finite
+```
+  * 
+    * Folosim doi biți pentru codarea acestei tip de date
+    * Valoarea implicită va fi idle
+    
+ ```VHDL
+-TYPE color IS (red, green, blue, white, black);
+--Un alt tip de date ENUMERATED
+```  
+
+  * 
+    * Folosim trei biți pentru codarea acestei tip de date
+    * Valorea implicită va fi red (roșu)
+    
+# Tipuri de date VHDL: Recorduri
+
+* Ca și Matricile, recordurile sunt colecții de obiecte
+* Spre deosebire de matricile, recordurile pot conține obiecte de diferite tipuri
+
+* Exemplu:
+
+ ```VHDL
+TYPE birthday IS RECORD
+day: INTEGER RANGE 1 TO 31;
+month: month_name; – month_name datatype should be predefined
+END RECORD;
+``` 
+
+# Tipuri de date VHDL: Tipurile Signed și Unsigned
+
+* Definite în pachetul <b> STD_LOGIC_ARITH </b> din librăria IEEE pentru <b> operații aritmetice </b>
+* Exemple de declarare semnal:
+
+ ```VHDL
+SIGNAL x: SIGNED (7 DOWNTO 0);
+SIGNAL y: UNSIGNED (0 TO 3);
+``` 
+
+* Sintaxă similară cu STD_LOGIC_VECTOR și nu cu numere întregi
+* O valoare UNSIGNED este un număr care este întotdeauna mai mare ca zero
+* De exemplu:
+  – Unsigned ‘‘0101’’ = decimalul 5
+  – Unsigned ‘‘1101’’ reprezintă 13
+  – Signed ‘‘0101’’ = decimalul 5
+  – Signed ‘‘1101’’ reprezintă -3 (complementul față de doi)
+  
+* <b> Exemple de operații </b>
+
+ ```VHDL
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+….........
+SIGNAL a: IN SIGNED (7 DOWNTO 0);
+SIGNAL b: IN SIGNED (7 DOWNTO 0);
+SIGNAL x: OUT SIGNED (7 DOWNTO 0);
+SIGNAL u: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+SIGNAL v: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+SIGNAL y: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+…........
+x <= a + b; - -legal
+x = a AND b; - - ilegal
+y = a + b; - - ilegal
+y = a AND b; - - legal
+``` 
+
+* Pachetele std_logic_signed și std_logic_unsigned permit nu numai operații logice, ci și aritmetice
+
+* Exemplu:
+
+ ```VHDL
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+...
+SIGNAL a: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+SIGNAL b: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+SIGNAL x: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+...
+v <= a+ b; -- legal
+w <= a AND b; -- legal
+``` 
+
+# Conversie de tipuri
+
+* Operații directe între diferite tipuri de date sunt ilegale în VHDL 
+* Soluția este conversia de date
+* Exemple:
+
+ ```VHDL
+TYPE long IS INTEGER RANGE -100 TO 100;
+TYPE short IS INTEGER RANGE -10 TO 10;
+SIGNAL x : short;
+SIGNAL y : long;
+...
+y <= 2*x + 5; -- error, type mismatch
+y <= long(2*x + 5); -- OK, result converted into type long
+``` 
+
+* Conversia de date definită în STD_LOGIC_ARITH
+* conv_integer(p):
+  - Convertește un parametru p de tip INTEGER, UNSIGNED, SIGNED sau STD_ULOGIC într-o valoare întreagă (INTEGER)
+  - Notăm că STD_LOGIC_VECTOR nu este inclus
+  
+* conv_unsigned(p, b): 
+  - Convertește un parametru p de tip INTEGER, UNSIGNED, SIGNED sau STD_ULOGIC într-o valoare UNSIGNED cu biți de mărime b
+  
+* conv_signed(p, b):
+  - Convertește un parametru p de tip INTEGER, UNSIGNED, SIGNED sau STD_ULOGIC într-o valoare SIGNED cu biți de mărime b
+  
+* conv_std_logic_vector(p, b): 
+  - Convertește un parametru p de tip INTEGER, UNSIGNED, SIGNED sau STD_ULOGIC într-o valoare STD_LOGIC_VECTOR cu biți de mărime b
+  
+* Exemplu:
+
+ ```VHDL
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+...
+SIGNAL a: IN UNSIGNED (7 DOWNTO 0);
+SIGNAL b: IN UNSIGNED (7 DOWNTO 0);
+SIGNAL y: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+...
+y <= CONV_STD_LOGIC_VECTOR ((a+b), 8);
+``` 
+
+* a+b este convertit de la UNSIGNED la o valoare STD_LOGIC_VECTOR de 8 biți, apoi atribuit lui y
+
+# Tipuri de date VHDL: Exemple
+
+* <b> Adunător de 4 biți </b>
+
+ ```VHDL
+------ Soluția 1: in/out=SIGNED -----------
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+------------------------------------------
+ENTITY adder1 IS
+PORT ( a, b : IN SIGNED (3 DOWNTO 0);
+sum : OUT SIGNED (4 DOWNTO 0));
+END adder1;
+------------------------------------------
+ARCHITECTURE adder1 OF adder1 IS
+BEGIN
+sum <= a + b;
+END adder1;
+``` 
+
+ ```VHDL
+------ Soluția 2: out=INTEGER -----------
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+------------------------------------------
+ENTITY adder2 IS
+PORT ( a, b : IN SIGNED (3 DOWNTO 0);
+sum : OUT INTEGER RANGE -16 TO 15);
+END adder2;
+------------------------------------------
+ARCHITECTURE adder2 OF adder2 IS
+BEGIN
+sum <= CONV_INTEGER(a + b);
+END adder2;
+
+``` 
+
+
+
+
+
+  
   
 
 
