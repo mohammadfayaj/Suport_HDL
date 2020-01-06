@@ -3,15 +3,12 @@
   ## Ce sunt tipurile de date?
 
 Tipurile de date sunt clasificari ale obiectelor/elementelor/datelor care definesc o posibila mulțime a valorilor pe care obiectele/elementele/datele pot reprezenta.
-Exemple de tipuri de date VHDL sunt: ```VHDL integer, bit, std_logic, std_logic_vector```
+Exemple de tipuri de date VHDL sunt: ```VHDL integer, bit, std_logic, std_logic_vector```.
  
   ## Tipuri de date predefinite
 
-Specificate prin standardele IEEE 1076 și IEEE 1164 
-Standardul IEEE 1076 definește VHSIC Hardware Description Language sau VHDL
-  Dezvoltat de Intermetics, IBM și Texas Instruments pentru Forța Aeriană a Statelor Unite
-  Prima verziune era 1076-1987
-  Revăzut în 1993, 2000, 2002 și 2008
+Tipuri de date predefinite se regasesc in standardele IEEE 1076 (standardul initial a limbajului VHDL - prima verziune era 1076-1987
+care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și IEEE 1164 (un standard conceput pentru modelarea starilor intr-un circuit digital)
       
 ![](tipuri_de_date.svg)
 
