@@ -1,12 +1,12 @@
 # Tipuri de date VHDL
 
-  * Ce este un tip de date?
+  ## Ce este un tip de date?
 
     * Este o clasificare a obiectelor/elementelor/datelor care definește posibila mulțime a valorilor pe care obiectele/elementele/datele care aparțin acelui tip își pot asuma
     * Ex. (VHDL)  integer, bit, std_logic, std_logic_vector
     * Alte limbaje (float, double, int , char etc)
  
-  * Tipuri de date Predefinite
+  ## Tipuri de date predefinite
   
     * Specificate prin standardele IEEE 1076 și IEEE 1164 
     * Standardul IEEE 1076 definește VHSIC Hardware Description Language sau VHDL
