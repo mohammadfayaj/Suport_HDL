@@ -15,11 +15,11 @@
       * Revăzut în 1993, 2000, 2002 și 2008
       
  VISIO1
-      
-  * <b>Pachetul standard al librărieri std (implicit inclus):</b>
+  ## Tipuri de date scalare     
+  ### Tipuri de date standard (implicit inclus in libraria std)
   
-    * tip bit (0, 1)
-    * vectori bit (semnal de grup multi-bit --> bus
+    * tipul bit (0, 1)
+    * vectori de bit (semnal de grup multi-bit --> folosit pentru a reperezenta magistrale)
 
     * Exemple
 ```VHDL
@@ -54,8 +54,8 @@
        - constant PI : real := 3.14159;
        ```
        
-   * Standardul IEEE 1164
-     * Introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
+   ### Tipuri de date pentru modelare starilor in circuite figitale (inclus in libraria std_logic_1164) 
+     * Standardul IEEE 1164 introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
      * Tipul primar de dată std_ulogic (standard unresolved logic), alcătuit din nouă litere în următoarea ordine:
      
 
@@ -127,15 +127,15 @@ VISIO 2
 
 ```
 
-# Tipuri de date VHDL: Matrici 
+## Tipuri de date tablou (vectori, matrici) 
 
-* O matrice este mulțimea obiectelor de aceasi tip
+* Un tablou este mulțimea obiectelor de aceasi tip
 * Poate fi unidimensional (1D) sau bidimensional (2D)
 * Matrici de dimensiuni mai mari nu pot fi sintentizate
 
 VISIO 3
 
-* <b> Definirea matricilor VHDL </b>
+### Definirea tablourilor in VHDL
    * Prima dată definim un nou tip de date
    * Apoi declarăm un semnal, o variabilă sau constantă de tipul definit anterior
  
@@ -153,7 +153,7 @@ SIGNAL signal_name: type_name [:= initial_value];
 TYPE row IS ARRAY (7 DOWNTO 0) OF STD_LOGIC;
 ```
 
-  * Definește o linie (matrice 1D) (tip de date) cu șapte valori STD_LOGIC cu MSB (bitul cel mai semnificativ) la stânga
+  * Definește un vector (o matrice 1D) (tip de date) cu șapte valori STD_LOGIC cu MSB (bitul cel mai semnificativ) la stânga
   
  ```VHDL
 TYPE matrix IS ARRAY (0 TO 3) OF row;
@@ -181,7 +181,7 @@ TYPE matrix IS ARRAY (0 TO 3) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
   * Este o matrice bidimensională de scalari
   
   
- # Tipuri de date VHDL: Atribuire Matrici
+ ### Atribuirea valorilor la tablouri
  
  * <b> Definire Tip: </b>
  
@@ -293,6 +293,9 @@ v(0) <= w(2);
 y(1) <= v(3);
 w(1, 5 DOWNTO 1) <= v(2)(4 DOWNTO 0);
 ```
+
+## Tipuri de date enumerate
+
 
 
 # Operatori VHDL
@@ -576,56 +579,5 @@ ARCHITECTURE adder2 OF adder2 IS
 BEGIN
 sum <= CONV_INTEGER(a + b);
 END adder2;
-
 ``` 
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
-
-
-  
-  
- 
- 
-
-
-
-  
-  
-
-
-   
-  
- 
-   
-       
-       
-       
-     
-       
-    
-       
     
