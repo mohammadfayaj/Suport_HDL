@@ -1,4 +1,4 @@
-#Tehnologia digitală
+# Tehnologia digitală
 ## Criterii de clasificare
 ### Tehnologie de fabricație
 Considerând tehnologia de fabricație se disting două clase mari de circuite digitale: bipolar și MOS. Diferența între aceste circuite este la nivel fizic, având topologii de circuite diferite, tensiuni de lucru diferite. Însă aceeași porți logice se pot implementa în ambele tehnologii. Primele circuite integrate erau realizate folosind tranzistoare bipolare. Tehnologiile bipolare erau de mai multe feluri, familia [ECL](https://en.wikipedia.org/wiki/Emitter-coupled_logic) (Emitter Coupled Logic), [IIL](https://en.wikipedia.org/wiki/Integrated_injection_logic) (Integrated Injection Logic), [TTL](https://en.wikipedia.org/wiki/Transistor%E2%80%93transistor_logic). Familia TTL a avut numeroase sub-variante, optimizate ori pe consum TTL-LS (Low-Power Schottky TTL), TTL-ALS (Advanced Low-power Schottky TTL), ori pe viteză de comutație TTL-S (Schottky TTL). Dezavantajul tehnologiilor bipolare este consumul lor de putere, pierderea datorată curenților de polarizare a tranzistoarelor fiind semnificativă.
