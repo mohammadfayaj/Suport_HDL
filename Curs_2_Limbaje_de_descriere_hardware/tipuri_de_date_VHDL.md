@@ -14,25 +14,18 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
 
   ## Tipuri de date scalare     
   ### Tipuri de date standard (implicit inclus in libraria std)
-  
-    * tipul bit (0, 1)
-    * vectori de bit (semnal de grup multi-bit --> folosit pentru a reperezenta magistrale)
 
-    #### Exemple
-    
-```VHDL
-– SIGNAL x: BIT;
-– SIGNAL y: BIT_VECTOR (3 DOWNTO 0);
-– SIGNAL w: BIT_VECTOR (0 TO 7);
-```
+   * REAL (de la -1.0E38 până +1.0E38)
+     * Exemplu:
+     ```VHDL
+       - constant PI : real := 3.14159;
+     ```
 
-
-   * Operator de atribuire a semnalului <b><=</b>
-```VHDL
-      - x <= '1';
-      - y <= "0111";
-      - w <= "01110001";
-```
+  * TIME (de la –2147483647 to +2147483647)
+     * Exemplu:
+     ```VHDL
+       signal time1 : time := 1000.125 ms;
+     ```
    
    * BOOLEAN (ADEVĂRAT, FALS)
      * Exemplu:
@@ -46,11 +39,26 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
        - SIGNAL SUM: integer range 0 to 256 :=16;
        ```
        
-   * REAL (de la -1.0E38 până +1.0E38)
+   * BIT (0,1) 
      * Exemplu:
      ```VHDL
-       - constant PI : real := 3.14159;
+       – SIGNAL x: BIT;
        ```
+       
+  * BIT_Vector (0, 1)
+    * vectori de bit (semnal de grup multi-bit --> folosit pentru a reperezenta magistrale)
+    * Exemple
+    ```VHDL
+    – SIGNAL y: BIT_VECTOR (3 DOWNTO 0);
+    – SIGNAL w: BIT_VECTOR (0 TO 7);
+    ```
+
+   * Operator de atribuire a semnalului <b><=</b>
+```VHDL
+      - x <= '1';
+      - y <= "0111";
+      - w <= "01110001";
+```
        
    ### Tipuri de date pentru modelare starilor in circuite digitale (inclus in libraria std_logic_1164) 
      * Standardul IEEE 1164 introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
