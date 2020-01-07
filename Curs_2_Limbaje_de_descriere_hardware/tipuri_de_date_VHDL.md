@@ -61,8 +61,9 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
 ```
        
    ### Tipuri de date pentru modelare starilor in circuite digitale (inclus in libraria std_logic_1164) 
-     * Standardul IEEE 1164 introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
-     * Tipul primar de dată std_ulogic (standard unresolved logic), alcătuit din nouă litere în următoarea ordine:
+   
+  * Standardul IEEE 1164 introduce pachetele de logică multiplă (Multivalue Logic - std_logic_1164)
+  * Tipul primar de dată std_ulogic (standard unresolved logic), alcătuit din nouă litere în următoarea ordine:
      
 
  1. <b>  'U' - neinițializat (valoare implicită) </b>
