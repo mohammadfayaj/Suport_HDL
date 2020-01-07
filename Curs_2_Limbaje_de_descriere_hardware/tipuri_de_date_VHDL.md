@@ -18,7 +18,8 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
     * tipul bit (0, 1)
     * vectori de bit (semnal de grup multi-bit --> folosit pentru a reperezenta magistrale)
 
-    * Exemple
+    #### Exemple
+    
 ```VHDL
 – SIGNAL x: BIT;
 – SIGNAL y: BIT_VECTOR (3 DOWNTO 0);
@@ -425,7 +426,7 @@ TYPE bit_vector IS ARRAY (NATURAL RANGE <>) OF BIT;
     * Folosim trei biți pentru codarea acestei tip de date
     * Valorea implicită va fi red (roșu)
     
-# Tipuri de date VHDL: Recorduri
+## Structuri (record)
 
 * Ca și Matricile, recordurile sunt colecții de obiecte
 * Spre deosebire de matricile, recordurile pot conține obiecte de diferite tipuri
@@ -439,7 +440,7 @@ month: month_name; – month_name datatype should be predefined
 END RECORD;
 ``` 
 
-# Tipuri de date VHDL: Tipurile Signed și Unsigned
+## Tipurile Signed și Unsigned
 
 * Definite în pachetul <b> STD_LOGIC_ARITH </b> din librăria IEEE pentru <b> operații aritmetice </b>
 * Exemple de declarare semnal:
