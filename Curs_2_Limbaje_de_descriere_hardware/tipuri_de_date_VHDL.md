@@ -54,23 +54,35 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
     ```
 
    * Operator de atribuire a semnalului <b><=</b>
-```VHDL
+      ```VHDL
       - x <= '1';
       - y <= "0111";
       - w <= "01110001";
-```
+      ```
              
    * NATURAL (de la 0 până +2147483647)
      * Exemplu:
      ```VHDL
-       - SIGNAL SUM: natural range 0 to 256 :=16;
+       - SIGNAL SUM: natural range 0 to 225 :=15;
      ```
     
    
    * POSITIVE (de la 1 până +2147483647)
      * Exemplu:
      ```VHDL
-       - SIGNAL SUM: positive range 1 to 256 :=16;
+       - SIGNAL SUM: positive range 1 to 900 :=30;
+     ```
+     
+   * SEVERITY (note, warning, error, failure)
+     * Exemplu:
+     ```VHDL
+       - report <message_string> [severity <severity_level>];
+     ```
+     
+   * CHARACTER (orice caracter)
+     * Exemplu:
+     ```VHDL
+       - char mychar := 'A';
      ```
    
        
