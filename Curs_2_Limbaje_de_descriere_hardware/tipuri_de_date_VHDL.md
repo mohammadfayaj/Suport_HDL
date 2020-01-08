@@ -59,6 +59,20 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
       - y <= "0111";
       - w <= "01110001";
 ```
+             
+   * NATURAL (de la 0 până +2147483647)
+     * Exemplu:
+     ```VHDL
+       - SIGNAL SUM: natural range 0 to 256 :=16;
+     ```
+    
+   
+   * POSITIVE (de la 1 până +2147483647)
+     * Exemplu:
+     ```VHDL
+       - SIGNAL SUM: positive range 1 to 256 :=16;
+     ```
+   
        
    ### Tipuri de date pentru modelare starilor in circuite digitale (inclus in libraria std_logic_1164) 
    
