@@ -2,7 +2,7 @@
 
   ## Ce sunt tipurile de date?
   
-  ![alt text](https://github.com/botondkirei/Suport_HDL/edit/master/Curs_2_Limbaje_de_descriere_hardware/fig2.JPG)
+  ![alt text](https://github.com/botondkirei/Suport_HDL/edit/master/Curs_2_Limbaje_de_descriere_hardware/fig2.JPG "fig2")
 
 Tipurile de date sunt clasificari ale obiectelor/elementelor/datelor care definesc o posibila mulțime a valorilor pe care obiectele/elementele/datele pot reprezenta.
 Exemple de tipuri de date VHDL sunt: ```VHDL integer, bit, std_logic, std_logic_vector```.
