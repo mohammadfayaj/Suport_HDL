@@ -82,7 +82,7 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
    * CHARACTER (orice caracter)
      * Exemplu:
      ```VHDL
-       - char mychar := 'A';
+       - character mychar := 'A';
      ```
    
        
