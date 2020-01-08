@@ -353,8 +353,105 @@ y(1) <= v(3);
 w(1, 5 DOWNTO 1) <= v(2)(4 DOWNTO 0);
 ```
 
-## Tipuri de date enumerate
+## Extensii pentru tipuri de date
 
+
+* Pachetul std_logic_arith din librăria IEEE
+  * Definește tipuri de date SIGNED și UNSIGNED și multiple funcții de conversie de date ca:
+    * conv_integer(p), 
+    * conv_unsigned(p, b),
+    * conv_signed(p, b), and
+    * conv_std_logic_vector(p, b).
+  * Permit operațiuni aritmetice
+  * Conversia de date va fi discutat mai târziu
+  
+* Pachetele std_logic_signed și std_logic_unsigned din librăria IEEE:
+
+  * Conțin funcții care permit operațiuni cu date STD_LOGIC_VECTOR să fie efectuat ca fiind de tip SIGNED sau UNSIGNED
+  
+
+## Tipuri de Date VHDL definite de utilizator
+
+### Subtipuri
+
+* Tipuri de date întregi (integer) definite de utilizator
+  * Subtip al Integer
+  * Exemple:
+  
+ ```VHDL
+– TYPE integer IS RANGE -2147483647 TO +2147483647;
+– TYPE my_integer IS RANGE -32 TO 32;
+– -- A user-defined subset of integers.
+– TYPE student_grade IS RANGE 0 TO 100;
+– -- A user-defined subset of integers or naturals.
+– TYPE natural IS RANGE 0 TO +2147483647;
+```
+### Tipuri de date enumerate
+
+* Tipuri de date ENUMARATED definite de utilizator
+  * Tip de date alcătuit de o mulțime de valori numite
+  * Exemple:
+ 
+```VHDL
+– TYPE bit IS ('0', '1');
+– TYPE my_logic IS ('0', '1', 'Z');
+- -- BIT predefinit
+
+TYPE bit_vector IS ARRAY (NATURAL RANGE <>) OF BIT;
+- -- BIT_VECTOR predefinit
+- -- NATURAL RANGE <> indică faptul că singura restricție este că intervalul trebuie sa fie în interiorul lui NATURAL range
+```
+
+  * Mai multe exemple:
+  
+  ```VHDL
+-TYPE state IS (idle, forward, backward, stop); 
+--Un tip de date ENUMERATED, tipic pentru mașini cu stări finite
+```
+  * 
+    * Folosim doi biți pentru codarea acestei tip de date
+    * Valoarea implicită va fi idle
+    
+ ```VHDL
+-TYPE color IS (red, green, blue, white, black);
+--Un alt tip de date ENUMERATED
+```  
+
+  * 
+    * Folosim trei biți pentru codarea acestei tip de date
+    * Valorea implicită va fi red (roșu)
+    
+### Structuri (record)
+
+* Ca și Matricile, recordurile sunt colecții de obiecte
+* Spre deosebire de matricile, recordurile pot conține obiecte de diferite tipuri
+
+* Exemplu:
+
+ ```VHDL
+TYPE birthday IS RECORD
+day: INTEGER RANGE 1 TO 31;
+month: month_name; – month_name datatype should be predefined
+END RECORD;
+``` 
+
+## Tipurile Signed și Unsigned
+
+* Definite în pachetul <b> STD_LOGIC_ARITH </b> din librăria IEEE pentru <b> operații aritmetice </b>
+* Exemple de declarare semnal:
+
+ ```VHDL
+SIGNAL x: SIGNED (7 DOWNTO 0);
+SIGNAL y: UNSIGNED (0 TO 3);
+``` 
+
+* Sintaxă similară cu STD_LOGIC_VECTOR și nu cu numere întregi
+* O valoare UNSIGNED este un număr care este întotdeauna mai mare ca zero
+* De exemplu:
+  – Unsigned ‘‘0101’’ = decimalul 5
+  – Unsigned ‘‘1101’’ reprezintă 13
+  – Signed ‘‘0101’’ = decimalul 5
+  – Signed ‘‘1101’’ reprezintă -3 (complementul față de doi)
 
 
 # Operatori VHDL
@@ -395,129 +492,6 @@ w(1, 5 DOWNTO 1) <= v(2)(4 DOWNTO 0);
 | Mai mic sau egal cu | <= | If (A <= B) Then |
 | Mai mare ca | > | If (A > B) Then |
 | Mai mare sau egal cu | >= | If (A >= B) Then |
-
-# Cuvinte rezervate VHDL
-
-* Cuvintele rezervate nu pot fi folosite de designer pentru identificatori ca variabile, nume de semnal, etc.
-
-| abs        | file          | of  | then | 
-| ------------- |:-------------:| :----:| ---: | 
-| after      | for | open | to | 
-| all      |      |   or | transport | 
-| and | generic     |    others | type | 
-| architecture      |  | out |  | 
-| array    | if     |    | until | 
-|  | in | package | use | 
-| begin   | inertial | port | | 
-|       | inout    |   process | variable | 
-| case | is      |     |  | 
-| component      |  | rem | wait | 
-| configuration     | library      |   report | when |  
-| constant | linkage      |   rol | while | 
-|  | loop | ror| with | 
-| downto   |  |  | | 
-|       | mod    |   select | xnor | 
-| else |      |  signal   | xor  | 
-| elsif      | nand | sla |  | 
-| end     | next      |   sll |  |  
-| entity | nor      |   sra |  | 
-|  | not     |   srl |  | 
-
-# Tipuri de Date: Subiecte Avansate
-
-* Pachetul std_logic_arith din librăria IEEE
-  * Definește tipuri de date SIGNED și UNSIGNED și multiple funcții de conversie de date ca:
-    * conv_integer(p), 
-    * conv_unsigned(p, b),
-    * conv_signed(p, b), and
-    * conv_std_logic_vector(p, b).
-  * Permit operațiuni aritmetice
-  * Conversia de date va fi discutat mai târziu
-  
-* Pachetele std_logic_signed și std_logic_unsigned din librăria IEEE:
-
-  * Conțin funcții care permit operațiuni cu date STD_LOGIC_VECTOR să fie efectuat ca fiind de tip SIGNED sau UNSIGNED
-  
-
-# Tipuri de Date VHDL definite de utilizator
-
-* Tipuri de date întregi (integer) definite de utilizator
-  * Subtip al Integer
-  * Exemple:
-  
- ```VHDL
-– TYPE integer IS RANGE -2147483647 TO +2147483647;
-– TYPE my_integer IS RANGE -32 TO 32;
-– -- A user-defined subset of integers.
-– TYPE student_grade IS RANGE 0 TO 100;
-– -- A user-defined subset of integers or naturals.
-– TYPE natural IS RANGE 0 TO +2147483647;
-```
-
-* Tipuri de date ENUMARATED definite de utilizator
-  * Tip de date alcătuit de o mulțime de valori numite
-  * Exemple:
- 
-```VHDL
-– TYPE bit IS ('0', '1');
-– TYPE my_logic IS ('0', '1', 'Z');
-- -- BIT predefinit
-
-TYPE bit_vector IS ARRAY (NATURAL RANGE <>) OF BIT;
-- -- BIT_VECTOR predefinit
-- -- NATURAL RANGE <> indică faptul că singura restricție este că intervalul trebuie sa fie în interiorul lui NATURAL range
-```
-
-  * Mai multe exemple:
-  
-  ```VHDL
--TYPE state IS (idle, forward, backward, stop); 
---Un tip de date ENUMERATED, tipic pentru mașini cu stări finite
-```
-  * 
-    * Folosim doi biți pentru codarea acestei tip de date
-    * Valoarea implicită va fi idle
-    
- ```VHDL
--TYPE color IS (red, green, blue, white, black);
---Un alt tip de date ENUMERATED
-```  
-
-  * 
-    * Folosim trei biți pentru codarea acestei tip de date
-    * Valorea implicită va fi red (roșu)
-    
-## Structuri (record)
-
-* Ca și Matricile, recordurile sunt colecții de obiecte
-* Spre deosebire de matricile, recordurile pot conține obiecte de diferite tipuri
-
-* Exemplu:
-
- ```VHDL
-TYPE birthday IS RECORD
-day: INTEGER RANGE 1 TO 31;
-month: month_name; – month_name datatype should be predefined
-END RECORD;
-``` 
-
-## Tipurile Signed și Unsigned
-
-* Definite în pachetul <b> STD_LOGIC_ARITH </b> din librăria IEEE pentru <b> operații aritmetice </b>
-* Exemple de declarare semnal:
-
- ```VHDL
-SIGNAL x: SIGNED (7 DOWNTO 0);
-SIGNAL y: UNSIGNED (0 TO 3);
-``` 
-
-* Sintaxă similară cu STD_LOGIC_VECTOR și nu cu numere întregi
-* O valoare UNSIGNED este un număr care este întotdeauna mai mare ca zero
-* De exemplu:
-  – Unsigned ‘‘0101’’ = decimalul 5
-  – Unsigned ‘‘1101’’ reprezintă 13
-  – Signed ‘‘0101’’ = decimalul 5
-  – Signed ‘‘1101’’ reprezintă -3 (complementul față de doi)
   
 * <b> Exemple de operații </b>
 
@@ -639,4 +613,32 @@ BEGIN
 sum <= CONV_INTEGER(a + b);
 END adder2;
 ``` 
-    
+
+
+
+# Cuvinte rezervate VHDL
+
+* Cuvintele rezervate nu pot fi folosite de designer pentru identificatori ca variabile, nume de semnal, etc.
+
+| abs        | file          | of  | then | 
+| ------------- |:-------------:| :----:| ---: | 
+| after      | for | open | to | 
+| all      |      |   or | transport | 
+| and | generic     |    others | type | 
+| architecture      |  | out |  | 
+| array    | if     |    | until | 
+|  | in | package | use | 
+| begin   | inertial | port | | 
+|       | inout    |   process | variable | 
+| case | is      |     |  | 
+| component      |  | rem | wait | 
+| configuration     | library      |   report | when |  
+| constant | linkage      |   rol | while | 
+|  | loop | ror| with | 
+| downto   |  |  | | 
+|       | mod    |   select | xnor | 
+| else |      |  signal   | xor  | 
+| elsif      | nand | sla |  | 
+| end     | next      |   sll |  |  
+| entity | nor      |   sra |  | 
+|  | not     |   srl |  | 
