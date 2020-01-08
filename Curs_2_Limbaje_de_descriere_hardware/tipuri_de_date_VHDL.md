@@ -60,14 +60,14 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
       - w <= "01110001";
       ```
              
-   * NATURAL (de la 0 până +2147483647)
+   * NATURAL (de la 0 până la +2147483647)
      * Exemplu:
      ```VHDL
        - SIGNAL SUM: natural range 0 to 225 :=15;
      ```
     
    
-   * POSITIVE (de la 1 până +2147483647)
+   * POSITIVE (de la 1 până la +2147483647)
      * Exemplu:
      ```VHDL
        - SIGNAL SUM: positive range 1 to 900 :=30;
@@ -83,6 +83,18 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
      * Exemplu:
      ```VHDL
        - character mychar := 'A';
+     ```
+     
+   * STD_LOGIC ('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') - varianta UNRESOLVED a STD_ULOGIC
+     * Exemplu:
+     ```VHDL
+       - Port (out1 : in  STD_LOGIC);
+     ```
+   
+   * STD_ULOGIC ('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') 
+     * Exemplu:
+     ```VHDL
+       - Port (in1 : in  STD_ULOGIC);
      ```
    
        
