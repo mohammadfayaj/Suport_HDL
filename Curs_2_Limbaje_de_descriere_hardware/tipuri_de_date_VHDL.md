@@ -353,23 +353,6 @@ y(1) <= v(3);
 w(1, 5 DOWNTO 1) <= v(2)(4 DOWNTO 0);
 ```
 
-## Extensii pentru tipuri de date
-
-
-* Pachetul std_logic_arith din librăria IEEE
-  * Definește tipuri de date SIGNED și UNSIGNED și multiple funcții de conversie de date ca:
-    * conv_integer(p), 
-    * conv_unsigned(p, b),
-    * conv_signed(p, b), and
-    * conv_std_logic_vector(p, b).
-  * Permit operațiuni aritmetice
-  * Conversia de date va fi discutat mai târziu
-  
-* Pachetele std_logic_signed și std_logic_unsigned din librăria IEEE:
-
-  * Conțin funcții care permit operațiuni cu date STD_LOGIC_VECTOR să fie efectuat ca fiind de tip SIGNED sau UNSIGNED
-  
-
 ## Tipuri de Date VHDL definite de utilizator
 
 ### Subtipuri
@@ -435,7 +418,23 @@ month: month_name; – month_name datatype should be predefined
 END RECORD;
 ``` 
 
-## Tipurile Signed și Unsigned
+## Extensii pentru tipuri de date
+
+
+* Pachetul std_logic_arith din librăria IEEE
+  * Definește tipuri de date SIGNED și UNSIGNED și multiple funcții de conversie de date ca:
+    * conv_integer(p), 
+    * conv_unsigned(p, b),
+    * conv_signed(p, b), and
+    * conv_std_logic_vector(p, b).
+  * Permit operațiuni aritmetice
+  * Conversia de date va fi discutat mai târziu
+  
+* Pachetele std_logic_signed și std_logic_unsigned din librăria IEEE:
+
+  * Conțin funcții care permit operațiuni cu date STD_LOGIC_VECTOR să fie efectuat ca fiind de tip SIGNED sau UNSIGNED
+
+### Tipurile Signed și Unsigned
 
 * Definite în pachetul <b> STD_LOGIC_ARITH </b> din librăria IEEE pentru <b> operații aritmetice </b>
 * Exemple de declarare semnal:
@@ -453,6 +452,7 @@ SIGNAL y: UNSIGNED (0 TO 3);
   – Signed ‘‘0101’’ = decimalul 5
   – Signed ‘‘1101’’ reprezintă -3 (complementul față de doi)
 
+### Tipurile fixed_point și floating_point
 
 # Operatori VHDL
 
@@ -613,8 +613,6 @@ BEGIN
 sum <= CONV_INTEGER(a + b);
 END adder2;
 ``` 
-
-
 
 # Cuvinte rezervate VHDL
 
