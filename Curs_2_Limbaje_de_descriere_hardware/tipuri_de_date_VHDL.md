@@ -1,8 +1,6 @@
 # Tipuri de date VHDL
 
   ## Ce sunt tipurile de date?
-  
-  ![alt text](https://github.com/botondkirei/Suport_HDL/edit/master/Curs_2_Limbaje_de_descriere_hardware/fig2.JPG "fig2")
 
 Tipurile de date sunt clasificari ale obiectelor/elementelor/datelor care definesc o posibila mulțime a valorilor pe care obiectele/elementele/datele pot reprezenta.
 Exemple de tipuri de date VHDL sunt: ```VHDL integer, bit, std_logic, std_logic_vector```.
@@ -105,7 +103,7 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
   * Declarate întotdeauna cu ajutorul unei funcții de rezoluție (din interiorul librăriei)
   * Funcția de rezoluție definește toate combinațiile posibile de la una sau mai ulte valori de surse și rezultatul corespunzător
   
-VISIO 2
+  ![alt text](https://github.com/botondkirei/Suport_HDL/edit/master/Curs_2_Limbaje_de_descriere_hardware/fig2.JPG)
   
 * std_logic (este de tip resolved)
   * Subtip al std_ulogic
@@ -142,7 +140,7 @@ VISIO 2
 * Poate fi unidimensional (1D) sau bidimensional (2D)
 * Matrici de dimensiuni mai mari nu pot fi sintentizate
 
-VISIO 3
+![alt text](https://github.com/botondkirei/Suport_HDL/edit/master/Curs_2_Limbaje_de_descriere_hardware/fig3.JPG)
 
 ### Definirea tablourilor in VHDL
    * Prima dată definim un nou tip de date
