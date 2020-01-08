@@ -84,18 +84,31 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
      ```VHDL
        - character mychar := 'A';
      ```
-     
-   * STD_LOGIC ('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') - varianta UNRESOLVED a STD_ULOGIC
-     * Exemplu:
-     ```VHDL
-       - Port (out1 : in  STD_LOGIC);
-     ```
-   
+    
    * STD_ULOGIC ('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') 
      * Exemplu:
      ```VHDL
        - Port (in1 : in  STD_ULOGIC);
      ```
+   
+   * STD_LOGIC ('U', 'X', '0', '1', 'Z', 'W', 'L', 'H', '-') - varianta UNRESOLVED a STD_ULOGIC
+     * Exemplu:
+     ```VHDL
+       - Port (out1 : in  STD_LOGIC);
+     ```
+     
+   * STRING (șir necontrâns de caractere)
+     * Exemplu:
+     ```VHDL
+       - SIGNAL Message2 : string(1 to 10);
+     ```
+     
+   * STD_LOGIC_VECTOR (vector de elemente de tip STD_LOGIC)
+     * Exemplu:
+     ```VHDL
+       - Port ( a_vec : in STD_LOGIC_VECTOR(0 to 2);
+     ```
+     
    
        
    ### Tipuri de date pentru modelare starilor in circuite digitale (inclus in libraria std_logic_1164) 
