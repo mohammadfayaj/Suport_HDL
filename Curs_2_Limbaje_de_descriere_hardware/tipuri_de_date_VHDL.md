@@ -155,7 +155,7 @@ care a fost revizuit în 1993, 2000, 2002, 2008 si cel mai recent in 2019) și I
   * Funcția de rezoluție definește toate combinațiile posibile de la una sau mai ulte valori de surse și rezultatul corespunzător
 
 
-  ![](fig2.JPG)
+  ![](fig_smaller.JPG)
   
 * std_logic (este de tip resolved)
   * Subtip al std_ulogic
