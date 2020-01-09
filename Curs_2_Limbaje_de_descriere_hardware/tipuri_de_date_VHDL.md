@@ -618,25 +618,55 @@ END adder2;
 
 * Cuvintele rezervate nu pot fi folosite de designer pentru identificatori ca variabile, nume de semnal, etc.
 
-| abs        | file          | of  | then | 
-| ------------- |:-------------:| :----:| ---: | 
-| after      | for | open | to | 
-| all      |      |   or | transport | 
-| and | generic     |    others | type | 
-| architecture      |  | out |  | 
-| array    | if     |    | until | 
-|  | in | package | use | 
-| begin   | inertial | port | | 
-|       | inout    |   process | variable | 
-| case | is      |     |  | 
-| component      |  | rem | wait | 
-| configuration     | library      |   report | when |  
-| constant | linkage      |   rol | while | 
-|  | loop | ror| with | 
-| downto   |  |  | | 
-|       | mod    |   select | xnor | 
-| else |      |  signal   | xor  | 
-| elsif      | nand | sla |  | 
-| end     | next      |   sll |  |  
-| entity | nor      |   sra |  | 
-|  | not     |   srl |  | 
+```VHDL
+abs
+after
+all
+and
+architecture
+array
+begin
+case
+component
+configuration
+constant
+downto
+else
+elsif
+end
+entity
+file
+for
+generic
+if
+in
+inertial
+inout
+is
+library
+linkage
+loop
+mod
+nand
+next
+nor
+not
+of
+open
+or
+others
+out
+package
+port
+process
+rem
+report
+rol
+ror
+select
+signal
+sla
+sll
+sra
+srl
+```
