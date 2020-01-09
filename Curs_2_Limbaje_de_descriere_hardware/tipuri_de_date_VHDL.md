@@ -619,6 +619,7 @@ END adder2;
 * Cuvintele rezervate nu pot fi folosite de designer pentru identificatori ca variabile, nume de semnal, etc.
 
 | abs        | file          | of  | then | 
+| ------------- |:-------------:| :----:| ---: | 
 | after      | for | open | to | 
 | all      |      |   or | transport | 
 | and | generic     |    others | type | 
