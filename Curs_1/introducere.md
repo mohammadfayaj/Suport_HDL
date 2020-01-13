@@ -1,4 +1,4 @@
-#Tehnologia digitală
+# Tehnologia digitală
 ## Criterii de clasificare
 ### Tehnologie de fabricație
 Considerând tehnologia de fabricație se disting două clase mari de circuite digitale: bipolar și MOS. Diferența între aceste circuite este la nivel fizic, având topologii de circuite diferite, tensiuni de lucru diferite. Însă aceeași porți logice se pot implementa în ambele tehnologii. Primele circuite integrate erau realizate folosind tranzistoare bipolare. Tehnologiile bipolare erau de mai multe feluri, familia [ECL](https://en.wikipedia.org/wiki/Emitter-coupled_logic) (Emitter Coupled Logic), [IIL](https://en.wikipedia.org/wiki/Integrated_injection_logic) (Integrated Injection Logic), [TTL](https://en.wikipedia.org/wiki/Transistor%E2%80%93transistor_logic). Familia TTL a avut numeroase sub-variante, optimizate ori pe consum TTL-LS (Low-Power Schottky TTL), TTL-ALS (Advanced Low-power Schottky TTL), ori pe viteză de comutație TTL-S (Schottky TTL). Dezavantajul tehnologiilor bipolare este consumul lor de putere, pierderea datorată curenților de polarizare a tranzistoarelor fiind semnificativă.
@@ -25,7 +25,7 @@ Notă: primul calculator ENIAC a folosit baza decimală pentru reprezentarea val
 
 ## Proiectarea sistemelor digitale
 
-###Metode de proiectare a sistemelor digitale
+### Metode de proiectare a sistemelor digitale
 1. Desenarea schemelor electronice utilizand un editor de circuite electronice (Orcad - Capture CIS)
 - Metoda se poate utiliza la circuite cu numar redus de porti/tranzistoare;
 - Proiectarea schematica nu faciliteaza verificarea logica a circuitelor.
@@ -63,7 +63,7 @@ Pentru a sintetiza modulele HDL in thenologia in care va fi implementat
 
 Stiluri de proiectare
 
-###Fluxul de proiectare cu CAD
+### Fluxul de proiectare cu CAD
 
 Pentru a face față complexității ridicate a sistemelor digitale (o complexitate care se crește împreună cu legea lui Moore) este nevoie de o abordare care împarte problema mare în probleme mai mici. Astfel este nevoie și de nivele de abstractizare. Cu parcurgerea nivelurilor de abstractizare, obținem un proiect mai puțin abstract, mai aproape de realitate. În parcurgerea nivelurilor sunt de ajutor aplicațiile de sinteză și de verificare. Un pas de sinteză aduce design-ul mai aproape de realitate, iar un pas de verificare valizează pasukl făcut.
 
