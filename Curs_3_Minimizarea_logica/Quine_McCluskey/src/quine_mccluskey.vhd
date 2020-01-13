@@ -12,31 +12,43 @@ package quine_mccluskey is
 		succ : ITEM_PTR;
 	end record ITEM;
 	
+	type IMPLICANT;
+	
+	type IMPLICANT_PTR is access IMPLICANT;
+	
 	type IMPLICANT is record
 		covered : ITEM_PTR;
 		size : integer;
 		used : boolean;
+		succ : IMPLICANT_PTR;
 	end record IMPLICANT;
 	
-	type IMPLICANT_PTR is access IMPLICANT;
-	
-	type GROUPS is record
-		member : IMPLICANT;
-		succ : IMPLICANT_PTR;
-	end record GROUPS;
+	type GROUPS;
 	
 	type GROUPS_PTR is access GROUPS;
 	
-	type COLUMN is record
-		member : GROUPS;
+	type GROUPS is record
+		member : IMPLICANT_PTR;
+		order : integer;
 		succ : GROUPS_PTR;
-	end record COLUMN;
+	end record GROUPS;
+	
+	type COLUMN;
 	
 	type COLUMN_PTR is access COLUMN;
 	
-	type TABLE is record
-		member : COLUMN;
+	type COLUMN is record
+		member : GROUPS_PTR;
 		succ : COLUMN_PTR;
+	end record COLUMN;
+	
+	type TABLE;
+	
+	type TABLE_PTR is access TABLE;
+	
+	type TABLE is record
+		member : COLUMN_PTR;
+		succ : TABLE_PTR;
 	end record TABLE;
 	
 	type minimizer is protected
