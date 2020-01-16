@@ -77,7 +77,7 @@ package body quine_mccluskey is
 		variable testList: ITEM_PTR; -- lista test -- Daniela
 		
 		procedure load_function is
-			file file_handler     : text open read_mode is "..\test\functie1.txt";
+			file file_handler     : text open read_mode is "../test/functie1.txt";
 			Variable row          : line;
 			Variable v_data_read  : integer;
 			Variable valoare      : integer; 
@@ -133,23 +133,97 @@ package body quine_mccluskey is
 		end procedure;
 		
 		procedure order_function is
+			function get_order(valoare:integer) return integer is 	
+				variable count:integer :=0;
+				variable tmp : integer;
+			begin
+				tmp:= valoare;
+				while(tmp/=0) loop
+					if (tmp rem 2)=1 then
+						count:=count+1;
+					end if;
+					tmp:=tmp/2;
+				end loop;
+				return count;
+			end function;
+			
+			procedure existsOrderInColumn(variable col: in column_ptr; variable order :in integer; variable ret : out boolean) is
+				variable coloana : column_ptr;
+				variable isOrder : boolean := false;
+			begin
+				coloana := col;
+				while coloana.member /= null loop
+					if coloana.member.order = order then
+						isOrder := true;
+					end if;
+				end loop;
+				ret := isOrder;
+			end procedure;
+			
+			procedure addItem(variable coloana: inout column_ptr; variable ordinCurent, termenCurent : integer) is
+				variable col : column_ptr;
+				variable grupe : groups_ptr;
+				variable termen : implicant_ptr;
+			begin
+				col := coloana;
+				while col.member.order /= ordinCurent loop
+					col.member := col.member.succ;
+				end loop;
+				grupe := col.member;
+				while grupe.member.covered.value < termenCurent loop
+				end loop;
+						
+			end procedure;
+			
+			variable coloana:column_ptr;
+			variable grupe, pointer_grupe : groups_ptr;
+			variable implicanti : implicant_ptr;
+			variable termeni : item_ptr;
+			variable ret : boolean;
+			variable termenCurent, ordinCurent : integer;
 		begin
 			--todo : compute the order of each implicant
 			-- create groups for each order
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		end procedure;	
-			
+			coloana := new column;
+			coloana.member:= null;
+			coloana.succ := null;
+			report "am intrat in order_function!!!" severity note;
+			termeni := testList;
+			-- parcurge toti termeni din lista (pe moment lista de test)
+			while ( termeni /= null) loop
+				termenCurent := termeni.value;
+				report integer'image(termenCurent);
+				ordinCurent := get_order(termenCurent);
+				existsOrderInColumn(coloana,ordinCurent,ret); 
+				if ret then
+					addItem(coloana, ordinCurent, termenCurent);
+				else
+					-- creare grupa noua
+					grupe := new groups;
+					grupe.order:= ordinCurent;
+					grupe.succ:= null;
+					-- creare implicant nou
+					grupe.member := new Implicant;
+					grupe.member.succ := null;
+					grupe.member.size := 1;
+					--creare termen nou
+					grupe.member.covered := new Item;
+					grupe.member.covered.value := termenCurent;
+					grupe.member.covered.succ := null;
+
+					--inserare grupe la coloana 
+					pointer_grupe := coloana.member;
+					while pointer_grupe.succ /= null or pointer_grupe.succ.order > ordinCurent loop
+						pointer_grupe := pointer_grupe.succ;
+					end loop;
+					grupe.succ := pointer_grupe;
+					pointer_grupe := grupe;
+				end if;
+				
+			end loop;
+							
+		end procedure;				
+		
 		procedure get_prime_implicants is
 		begin
 			--todo : implement get implicants

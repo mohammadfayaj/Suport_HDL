@@ -10,12 +10,12 @@ architecture EX_ACCESS of testbench_qm is
 begin
 
 process begin
+
 	min.load_function;
-
 	min.print;
-	
-
 	min.initTestList;
+	
+	min.order_function;
 
 	assert false report "end sim" severity failure;
 	wait;
