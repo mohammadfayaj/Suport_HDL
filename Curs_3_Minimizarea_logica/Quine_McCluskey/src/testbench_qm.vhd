@@ -11,8 +11,16 @@ begin
 
 process begin
 
-	min.load_function;
+	min.load_function("..\test\functie1.txt");
 	min.print;
+	
+
+	min.load_function("..\test\functie2.txt");
+	min.print;	
+	
+
+	min.load_function("..\test\functie3.txt");
+	min.print;	
 	min.initTestList;
 	
 	min.order_function;

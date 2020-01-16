@@ -53,7 +53,7 @@ package quine_mccluskey is
 	
 	type minimizer is protected
 
-		procedure load_function;
+		procedure load_function(constant fisier_functie : string);
 		procedure order_function;
 		procedure get_prime_implicants;
 		procedure get_cover;
@@ -76,18 +76,29 @@ package body quine_mccluskey is
 		variable myFunction : ITEM_PTR;
 		variable testList: ITEM_PTR; -- lista test -- Daniela
 		
-		procedure load_function is
-			file file_handler     : text open read_mode is "../test/functie1.txt";
+		procedure load_function(constant fisier_functie : string) is
+			file file_handler     : text;
 			Variable row          : line;
 			Variable v_data_read  : integer;
 			Variable valoare      : integer; 
 			Variable ptr		  : ITEM_PTR;	
-			
+			variable function_implic_num : integer;
 		begin
-			--todo : implement read function
-			-- exemple:
+			
 			-- Read line from file: 
+			
+			--file file_pointer : text; 
 			 
+			--file functie1 : text;
+			--Variable fn : string
+
+			--fn := "" & fisier_functie;
+			file_open(file_handler,fisier_functie,READ_MODE);
+			
+			--file_open(file_pointer,fn,READ_MODE);
+			
+			--deschidere fisier  
+			
 			readline(file_handler, row);
 			
 			-- Read value from line: 
@@ -101,23 +112,27 @@ package body quine_mccluskey is
 			read(row, function_implic_num);
 			report integer'image(function_implic_num);  --nr implicanti
 			
+			myFunction := null;
+			
+		
 			for i in 1 to function_implic_num loop
-			readline(file_handler, row);
-			read(row, valoare);
-			
-			ptr := NEW ITEM;
-			
-			if i = 1 then
-						ptr.succ := NULL;
-			else 
-						ptr.succ := myFunction;
-			end if;
-			
-			ptr.value := valoare;
-			myFunction := ptr; 		
+				readline(file_handler, row);
+				read(row, valoare);
+				--report integer'image(valoare);
+				ptr := NEW ITEM;
+				ptr.value := valoare;
+				ptr.succ := myFunction;
+
+				myFunction := ptr; 		
 			end loop;
+			
+			--file_close(functie1);
+			
+			file_close(file_handler);
+			--fclose
 		end procedure;
 		
+	
 		procedure print is
 			variable ptr : ITEM_PTR;
 		
