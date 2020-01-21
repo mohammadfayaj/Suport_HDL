@@ -2,14 +2,16 @@
 
 ## Clasificarea metodelor de minimizare
 
-Primul criteriu de clasificare este numarul de nivele in care portile logice sunt orginaziate in urma minimizarii. Asfel avem
-*minimizare pe doua nivele (rezulta o reprezentare tip suma de produs - F(a,b,c) = ab +a'c + b'c')
-*minimizare multi-nivel (rezulta o reprezentare cu termen factorizat - F(a,b,c,d) = (a + (b' + (cd)) )
+Primul criteriu de clasificare este numarul de nivele in care portile logice sunt orginaziate in urma minimizarii. Asfel avem:
+
+* minimizare pe doua nivele (rezulta o reprezentare tip suma de produs - F(a,b,c) = ab +a'c + b'c')
+* minimizare multi-nivel (rezulta o reprezentare cu termen factorizat - F(a,b,c,d) = (a + (b' + (cd)) )
 
 Al doilea criteriu de clasificare priveste module de operare a procedeului de minimizare. Astfel se disting:
-*metode tabelare (minimizarea Karnauh)
-*metode algebrice (minimizarea Quine-McClusky)
-*metode euristice (minimizarea Espresso)
+
+* metode tabelare (minimizarea Karnauh)
+* metode algebrice (minimizarea Quine-McClusky)
+* metode euristice (minimizarea Espresso)
 
 ## Minimiarea algebraic (metoda Quine-MCClusky)
 Algoritmul Quine-McClusky, denumit si metoda implicantilor primi este o metoda folosita pentru minimizarea funtiilor booleene, dezvoltata de logicianul Willard Van Orman Quine si extinsa de Edward J. McCluskey. Metoda Quine-McClusky este utilizabilǎ, în principiu, pentru minimizarea funcţiilor scalare ori vectoriale cu un numǎr arbitrar de variabile.
