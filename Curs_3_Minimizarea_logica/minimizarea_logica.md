@@ -60,9 +60,9 @@ Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a
 |--------|----------|--------|
 | 0 | m<sub>0</sub>  | 00000 [x] |
 | 1 | m<sub>4</sub> </br>m<sub>8</sub>   | 00100 [x]<br>01000 [x]  |
-| 2 | 3</br>10</br>12</br>18  | 00011 [x]<br>01010 [x]<br>01100 [x]<br>10010 [x]  |
-| 3 | 7</br>11</br>14</br>19</br>26</br>28  |  00111 [x]</br>01011 [x]</br>01110 [x]</br>10011 [x]</br>11010 [x]</br>11100 [x] |
-| 4 |  15</br>23</br>29</br>30 | 01111 [x]</br>10111 [x]</br>11101 [x]</br>11110 [x]|
+| 2 | m<sub>3</sub></br>m<sub>10</sub></br>m<sub>12</sub></br>m<sub>18</sub>  | 00011 [x]<br>01010 [x]<br>01100 [x]<br>10010 [x]  |
+| 3 | m<sub>7</sub></br>m<sub>11</sub></br>m<sub>14</sub></br>m<sub>19</sub></br>m<sub>26</sub></br>m<sub>28</sub>  |  00111 [x]</br>01011 [x]</br>01110 [x]</br>10011 [x]</br>11010 [x]</br>11100 [x] |
+| 4 |  m<sub>15</sub></br>m<sub>23</sub></br>m<sub>29</sub></br>m<sub>30</sub> | 01111 [x]</br>10111 [x]</br>11101 [x]</br>11110 [x]|
 
 Tabel 2. Implicanţii de ordinul 0 ai funcţiei f
 
