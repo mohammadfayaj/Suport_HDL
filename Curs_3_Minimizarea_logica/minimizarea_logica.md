@@ -64,7 +64,7 @@ Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a
 | 3 | m<sub>7</sub></br>m<sub>11</sub></br>m<sub>14</sub></br>m<sub>19</sub></br>m<sub>26</sub></br>m<sub>28</sub>  |  00111 [x]</br>01011 [x]</br>01110 [x]</br>10011 [x]</br>11010 [x]</br>11100 [x] |
 | 4 |  m<sub>15</sub></br>m<sub>23</sub></br>m<sub>29</sub></br>m<sub>30</sub> | 01111 [x]</br>10111 [x]</br>11101 [x]</br>11110 [x]|
 
-Tabel 2. Implicanţii de ordinul 0 ai funcţiei f
+Tabel 2. Implicanţii de ordinul 0 ai funcţiei f(A,B,C,D,E) 
 
 Etapa a doua este dedicatǎ gǎsirii implicanţilor de ordin superior (implicanţii rezultaţi prin contopirea a doi implicanţi adiacenţi). Termenii adiacenţi se gǎsesc întotdeauna printre implicanţii de acelaşi ordin din douǎ clase succesive.
 
@@ -72,10 +72,11 @@ Astfel, se va cerceta sistematic adiacenţa termenilor dintre clasa 0 şi clasa 
 
 Adiacenţa, este definitǎ, astfel : doi implicanţi sunt adiacenţi dacǎ şi numai dacǎ diferǎ prin valoarea unui singur rang cu valoare binarǎ, în rest cei doi implicanţi fiind identici. Deîndatǎ ce doi implicanţi se dovedesc adiacenţi, este creat un implicant de ordin imediat superior. Implicanţii adiacenţi respectivi sunt, fiecare în parte, marcaţi. Marcajul implicanţilor adiacenţi semnificǎ faptul cǎ ambii au un succesor de ordin superior. Implicantul de ordin imediat superior este stocat într-o clasǎ, cu pondere corespunzǎtoare, de implicanţi de acelaşi ordin. Dacǎ s-au identificat doi implicanţi adiacenţi din clasele a 3-a şi a 4-a, de ordinul 0, se va genera un implicant care va fi din clasa a 2-a, dar de ordinul 1, spre exemplu. Odatǎ încheiat ciclul prin care s-au cercetat implicanţii de ordinul zero se continuǎ cu implicanţii de ordin 1 dacǎ existǎ cel puţin douǎ clase succesive nevide.
 
-Se poate constata faptul cǎ mintermul m0 (fǎcând parte din grupa 0, cu nici o unitate) se poate grupa cu mintermul m4 şi cu mintermul m8 (care aparţin grupei 1, cu o unitate). Similar, mintermul m4 (fǎcând parte din grupa cu 1, cu o unitate) se poate grupa cu mintermul m12 iar mintermul m8, din aceeaşi grupǎ cu mintermul m4, se poate grupa cu mintermul m10 şi mintermul m12 (mintermii m10 şi m12 aparţin grupei 2, cu douǎ unitǎţi), etc.
+Privind tabelul 2, se poate constata  cǎ mintermul m<sub>0</sub> (fǎcând parte din grupa 0, cu nici o unitate) se poate grupa cu mintermul m<sub>4</sub> şi cu mintermul m<sub>8</sub> (care aparţin grupei 1, cu o unitate). Similar, mintermul m<sub>4</sub> (fǎcând parte din grupa cu 1, cu o unitate) se poate grupa cu mintermul m<sub>12</sub> iar mintermul m<sub>8</sub>, din aceeaşi grupǎ cu mintermul m<sub>4</sub>, se poate grupa cu mintermul m<sub>10</sub> şi mintermul m<sub>12</sub> (mintermii m<sub>10</sub> şi m<sub>12</sub> aparţin grupei 2, cu douǎ unitǎţi), etc.
 
+Simbolul [x] inserat în dreapta reprezentării binare a implicanţilor marcheazî implicanţii care au fost incluşi în implicanţii de ordin superior în procesul de generare al acestora. Astfel, atât mintermul m<sub>8</sub> cât şi mintermul m<sub>10</sub>, primesc simbolul [x] în coloana imaginii binare. Se poate remarca faptul cǎ, în tabelul 2, toţi implicanţii de ordinul 0 au asociat simbolul [x] în coloana etichetatǎ prin ABCDE. 
 
-
+Rezultatele grupǎrilor mintermilor din tabelul 2 se pot urmǎri în coloanele indicilor şi implicanţilor (X4 X3 X2 X1 X0) din tabelul 1b.
 
 
 ## Minimizarea euristica
