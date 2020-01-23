@@ -56,9 +56,9 @@ Tabel 1. Implicanţii de ordinul 0 ai funcţiei f
 
 Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a procesului de generare a tuturor implicanţilor primi.
 
-|Grupa   | Implicanti (ord. 0)  | ABCDE  |
+|Clase   | Implicanti (ord. 0)  | ABCDE  |
 |--------|----------|--------|
-| 0 | 0 | 00000|
+| 0 | 0 | 00000 - [x]|
 | 1 | 4</br>8  | 00100</br>01000  |
 | 2 | 3</br>10</br>12</br>18  | 00011</br>01010</br>01100</br>10010  |
 | 3 | 7</br>11</br>14</br>19</br>26</br>28  |  00111</br>01011</br>01110</br>10011</br>11010</br>11100 |
