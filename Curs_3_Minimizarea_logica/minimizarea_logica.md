@@ -25,9 +25,11 @@ Terminologie: În calculul implicanţilor primi, mintermii funcţiei sunt numiţ
 
 Într-o primǎ etapǎ se calculeazǎ pentru fiecare implicant de ordinul 0 al funcţiei ponderea acestuia. Prin ponderea unui implicant se înţelege numǎrul de unitǎţi din reprezentarea binarǎ a respectivului implicant. Astfel, spre exemplu, implicanţii (de ordinul 0), 0101 şi 1101 au ponderea 2, respectiv 3, iar implicanţii -1-1 şi 01-0 au ponderea 2 (ordinul 2), respectiv 1 (ordinul 1). Toţi implicanţii de acelaşi ordin şi având aceeaşi pondere sunt grupaţi în aceiaşi clasǎ. Pe durata calculului implicanţilor primi, implicanţii de ordine diferite, chiar dacǎ au aceiaşi pondere, fac parte din clase distincte. Procesul de calcul al implicanţilor primi începe prin aşezarea implicanţilor iniţiali care au aceeași pondere, într-o aceeaşi clasǎ. Clasele sunt întotdeauna etichetate prin valoarea ponderii implicanţilor lor.
 
-Continuțnd cu un exemplu, se considerǎ funcţia:
+Continuând cu un exemplu, se considerǎ funcţia:
 
-$ f = m_0 + m_3 + m_4 + m_7 + m_8 + m_10 + m_11 + m_12 + m_14 + m_15 + m_18 + m_19 + m_23 + m_26 + m_28 + m_29 + m_30.
+```math
+ f = m_0 + m_3 + m_4 + m_7 + m_8 + m_10 + m_11 + m_12 + m_14 + m_15 + m_18 + m_19 + m_23 + m_26 + m_28 + m_29 + m_30.
+```
 
 Etapa a doua este dedicatǎ gǎsirii implicanţilor de ordin superior (implicanţii rezultaţi prin contopirea a doi implicanţi adiacenţi). Termenii adiacenţi se gǎsesc întotdeauna printre implicanţii de acelaşi ordin din douǎ clase succesive.
 
