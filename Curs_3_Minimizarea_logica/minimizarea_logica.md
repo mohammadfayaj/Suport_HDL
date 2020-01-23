@@ -29,15 +29,42 @@ Continuând cu un exemplu, se considerǎ funcţia:
 
 f(A,B,C,D,E) = m<sub>0</sub> + m<sub>3</sub> + m<sub>4</sub> + m<sub>7</sub> + m<sub>8</sub> + m<sub>10</sub> + m<sub>11</sub> + m<sub>12</sub> + m<sub>14</sub> + m<sub>15</sub> + m<sub>18</sub> + m<sub>19</sub> + m<sub>23</sub> + m<sub>26</sub> + m<sub>28</sub> + m<sub>29</sub> + m<sub>30</sub> 
 
-Funcţia are 5 variabile care se noteaza : A, B, C, D şi E. Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a procesului de generare a tuturor implicanţilor primi.
+Funcţia are 5 variabile care se noteaza : A, B, C, D şi E. 
 
-|Grupa   | Pondere  | ABCDE  |
+| Minterm | ABCDE | Pondere |
+|---------|---------|---------|
+| m<sub>0</sub>  | 00000 | 0 |
+| m<sub>3</sub>  | 00100 | 1 |
+| m<sub>4</sub>  | 01000 | 1 |
+| m<sub>7</sub>  | 00111 | 3 |
+| m<sub>8</sub>  | 01000 | 1 |
+| m<sub>10</sub> | 01010 | 2 |
+| m<sub>11</sub> | 01011 | 3 |
+| m<sub>12</sub> | 01100 | 2 |
+| m<sub>14</sub> | 01110 | 3 |
+| m<sub>15</sub> | 01111 | 4 |
+| m<sub>18</sub> | de completat| de completat |
+| m<sub>19</sub> | de completat| de completat |
+| m<sub>23</sub> | de completat| de completat |
+| m<sub>26</sub> | de completat| de completat |
+| m<sub>28</sub> | de completat| de completat |
+| m<sub>29</sub> | de completat| de completat |
+| m<sub>30</sub> | de completat| de completat |
+
+Tabel 1. Implicanţii de ordinul 0 ai funcţiei f
+
+
+Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a procesului de generare a tuturor implicanţilor primi.
+
+|Grupa   | Implicanti (ord. 0)  | ABCDE  |
 |--------|----------|--------|
 | 0 | 0 | 00000|
 | 1 | 4</br>8  | 00100</br>01000  |
 | 2 | 3</br>10</br>12</br>18  | 00011</br>01010</br>01100</br>10010  |
 | 3 | 7</br>11</br>14</br>19</br>26</br>28  |  00111</br>01011</br>01110</br>10011</br>11010</br>11100 |
 | 4 |  15</br>23</br>29</br>30 | 01111</br>10111</br>11101</br>11110|
+
+Tabel 2. Implicanţii de ordinul 0 ai funcţiei f
 
 Etapa a doua este dedicatǎ gǎsirii implicanţilor de ordin superior (implicanţii rezultaţi prin contopirea a doi implicanţi adiacenţi). Termenii adiacenţi se gǎsesc întotdeauna printre implicanţii de acelaşi ordin din douǎ clase succesive.
 
@@ -57,3 +84,6 @@ Adiacenţa, este definitǎ, astfel : doi implicanţi sunt adiacenţi dacǎ şi n
 4. [others](https://ddd.fit.cvut.cz/index.php?page=download)
 
 Instructiuni utilizare [sis](https://user.eng.umd.edu/~gangqu/ToVictoria/tutorial-www_diit_unict_it_introduzione_sis.pdf)
+
+Referinte
+[1] Dr.Ing.Mat. Ion I. Bucur, "Metoda Quine – McCluskey" - Note de curs [link](http://andrei.clubcisco.ro/cursuri/1pl/cursuri/Metoda%20Quine-McCluskey.pdf)
