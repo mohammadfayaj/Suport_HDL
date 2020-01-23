@@ -58,11 +58,11 @@ Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a
 
 |Clase   | Implicanti (ord. 0)  | ABCDE  |
 |--------|----------|--------|
-| 0 | 0 | 00000 <ul><li>- [x] </li></ul>|
-| 1 | 4</br>8  | 00100</br>01000  |
-| 2 | 3</br>10</br>12</br>18  | 00011</br>01010</br>01100</br>10010  |
-| 3 | 7</br>11</br>14</br>19</br>26</br>28  |  00111</br>01011</br>01110</br>10011</br>11010</br>11100 |
-| 4 |  15</br>23</br>29</br>30 | 01111</br>10111</br>11101</br>11110|
+| 0 | 0 | 00000 [x] |
+| 1 | 4</br>8  | 00100 [x]<br>01000 [x]  |
+| 2 | 3</br>10</br>12</br>18  | 00011 [x]<br>01010 [x]<br>01100 [x]<br>10010 [x]  |
+| 3 | 7</br>11</br>14</br>19</br>26</br>28  |  00111 [x]</br>01011 [x]</br>01110 [x]</br>10011 [x]</br>11010 [x]</br>11100 [x] |
+| 4 |  15</br>23</br>29</br>30 | 01111 [x]</br>10111 [x]</br>11101 [x]</br>11110 [x]|
 
 Tabel 2. Implicanţii de ordinul 0 ai funcţiei f
 
