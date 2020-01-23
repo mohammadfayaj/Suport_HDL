@@ -27,9 +27,9 @@ Terminologie: În calculul implicanţilor primi, mintermii funcţiei sunt numiţ
 
 Continuând cu un exemplu, se considerǎ funcţia:
 
-```math
- f = m_0 + m_3 + m_4 + m_7 + m_8 + m_10 + m_11 + m_12 + m_14 + m_15 + m_18 + m_19 + m_23 + m_26 + m_28 + m_29 + m_30.
-```
+
+$$ f = m_0 + m_3 + m_4 + m_7 + m_8 + m_10 + m_11 + m_12 + m_14 + m_15 + m_18 + m_19 + m_23 + m_26 + m_28 + m_29 + m_30 $$
+
 
 Etapa a doua este dedicatǎ gǎsirii implicanţilor de ordin superior (implicanţii rezultaţi prin contopirea a doi implicanţi adiacenţi). Termenii adiacenţi se gǎsesc întotdeauna printre implicanţii de acelaşi ordin din douǎ clase succesive.
 
