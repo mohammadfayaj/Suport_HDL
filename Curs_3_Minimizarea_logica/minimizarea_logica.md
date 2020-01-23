@@ -27,7 +27,14 @@ Terminologie: În calculul implicanţilor primi, mintermii funcţiei sunt numiţ
 
 Continuând cu un exemplu, se considerǎ funcţia:
 
-f = m<sub>0</sub> + m<sub>3</sub> + m<sub>4</sub> + m<sub>7</sub> + m<sub>8</sub> + m<sub>10</sub> + m<sub>11</sub> + m<sub>12</sub> + m<sub>14</sub> + m<sub>15</sub> + m<sub>18</sub> + m<sub>19</sub> + m<sub>23</sub> + m<sub>26</sub> + m<sub>28</sub> + m<sub>29</sub> + m<sub>30</sub> 
+f(A,B,C,D,E) = m<sub>0</sub> + m<sub>3</sub> + m<sub>4</sub> + m<sub>7</sub> + m<sub>8</sub> + m<sub>10</sub> + m<sub>11</sub> + m<sub>12</sub> + m<sub>14</sub> + m<sub>15</sub> + m<sub>18</sub> + m<sub>19</sub> + m<sub>23</sub> + m<sub>26</sub> + m<sub>28</sub> + m<sub>29</sub> + m<sub>30</sub> 
+
+Funcţia are 5 variabile care se noteaza : A, B, C, D şi E. Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a procesului de generare a tuturor implicanţilor primi.
+|Grupa   | Pondere  | ABCDE  |
+|--------|----------|--------|
+| 0 | 0</br>4 | 00000</br>00100|
+|   |   |   |
+|   |   |   |
 
 Etapa a doua este dedicatǎ gǎsirii implicanţilor de ordin superior (implicanţii rezultaţi prin contopirea a doi implicanţi adiacenţi). Termenii adiacenţi se gǎsesc întotdeauna printre implicanţii de acelaşi ordin din douǎ clase succesive.
 
