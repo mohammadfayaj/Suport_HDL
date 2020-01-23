@@ -25,7 +25,6 @@ Terminologie: În calculul implicanţilor primi, mintermii funcţiei sunt numiţ
 
 Într-o primǎ etapǎ se calculeazǎ pentru fiecare implicant de ordinul 0 al funcţiei ponderea acestuia. Prin ponderea unui implicant se înţelege numǎrul de unitǎţi din reprezentarea binarǎ a respectivului implicant. Astfel, spre exemplu, implicanţii (de ordinul 0), 0101 şi 1101 au ponderea 2, respectiv 3, iar implicanţii -1-1 şi 01-0 au ponderea 2 (ordinul 2), respectiv 1 (ordinul 1). Toţi implicanţii de acelaşi ordin şi având aceeaşi pondere sunt grupaţi în aceiaşi clasǎ. Pe durata calculului implicanţilor primi, implicanţii de ordine diferite, chiar dacǎ au aceiaşi pondere, fac parte din clase distincte. Procesul de calcul al implicanţilor primi începe prin aşezarea implicanţilor iniţiali care au aceeași pondere, într-o aceeaşi clasǎ. Clasele sunt întotdeauna etichetate prin valoarea ponderii implicanţilor lor.
 
-```
 Continuând cu un exemplu, se considerǎ funcţia:
 
 f(A,B,C,D,E) = \{m<sub>0</sub> + m<sub>3</sub> + m<sub>4</sub> + m<sub>7</sub> + m<sub>8</sub> + m<sub>10</sub> + m<sub>11</sub> + m<sub>12</sub> + m<sub>14</sub> + m<sub>15</sub> + m<sub>18</sub> + m<sub>19</sub> + m<sub>23</sub> + m<sub>26</sub> + m<sub>28</sub> + m<sub>29</sub> + m<sub>30</sub> 
@@ -52,27 +51,28 @@ Funcţia are 5 variabile care se noteaza : A, B, C, D şi E.
 | m<sub>29</sub> | de completat| de completat |
 | m<sub>30</sub> | de completat| de completat |
 
-Tabel 1. Implicanţii de ordinul 0 ai funcţiei f
+Tabel 1. Mintermi, reprezentarea lor binara si ponderea lor
 
 
 Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a procesului de generare a tuturor implicanţilor primi.
 
 |Clase   | Implicanti (ord. 0)  | ABCDE  |
 |--------|----------|--------|
-| 0 | 0 | 00000 [x] |
-| 1 | 4</br>8  | 00100 [x]<br>01000 [x]  |
+| 0 | m<sub>0</sub>  | 00000 [x] |
+| 1 | m<sub>4</sub> </br>m<sub>8</sub>   | 00100 [x]<br>01000 [x]  |
 | 2 | 3</br>10</br>12</br>18  | 00011 [x]<br>01010 [x]<br>01100 [x]<br>10010 [x]  |
 | 3 | 7</br>11</br>14</br>19</br>26</br>28  |  00111 [x]</br>01011 [x]</br>01110 [x]</br>10011 [x]</br>11010 [x]</br>11100 [x] |
 | 4 |  15</br>23</br>29</br>30 | 01111 [x]</br>10111 [x]</br>11101 [x]</br>11110 [x]|
 
 Tabel 2. Implicanţii de ordinul 0 ai funcţiei f
-```
 
 Etapa a doua este dedicatǎ gǎsirii implicanţilor de ordin superior (implicanţii rezultaţi prin contopirea a doi implicanţi adiacenţi). Termenii adiacenţi se gǎsesc întotdeauna printre implicanţii de acelaşi ordin din douǎ clase succesive.
 
 Astfel, se va cerceta sistematic adiacenţa termenilor dintre clasa 0 şi clasa 1, apoi adiacenţa dintre termenii claselor 1 şi 2 etc. Se începe ordonat cu implicanţii clasei cu cea mai micǎ pondere, dacǎ aceştia existǎ (clasa 0, spre exemplu, dacǎ aceasta este nevidǎ). Este util de remarcat faptul cǎ, implicanţii clasei 1-a, spre exemplu, sunt cercetaţi mai întâi în raport cu adiacenţa faţǎ de implicanţii clasei 0, iar apoi sunt cercetaţi în raport cu adiacenţa faţǎ de implicanţii clasei a 2-a.
 
 Adiacenţa, este definitǎ, astfel : doi implicanţi sunt adiacenţi dacǎ şi numai dacǎ diferǎ prin valoarea unui singur rang cu valoare binarǎ, în rest cei doi implicanţi fiind identici. Deîndatǎ ce doi implicanţi se dovedesc adiacenţi, este creat un implicant de ordin imediat superior. Implicanţii adiacenţi respectivi sunt, fiecare în parte, marcaţi. Marcajul implicanţilor adiacenţi semnificǎ faptul cǎ ambii au un succesor de ordin superior. Implicantul de ordin imediat superior este stocat într-o clasǎ, cu pondere corespunzǎtoare, de implicanţi de acelaşi ordin. Dacǎ s-au identificat doi implicanţi adiacenţi din clasele a 3-a şi a 4-a, de ordinul 0, se va genera un implicant care va fi din clasa a 2-a, dar de ordinul 1, spre exemplu. Odatǎ încheiat ciclul prin care s-au cercetat implicanţii de ordinul zero se continuǎ cu implicanţii de ordin 1 dacǎ existǎ cel puţin douǎ clase succesive nevide.
+
+Se poate constata faptul cǎ mintermul m0 (fǎcând parte din grupa 0, cu nici o unitate) se poate grupa cu mintermul m4 şi cu mintermul m8 (care aparţin grupei 1, cu o unitate). Similar, mintermul m4 (fǎcând parte din grupa cu 1, cu o unitate) se poate grupa cu mintermul m12 iar mintermul m8, din aceeaşi grupǎ cu mintermul m4, se poate grupa cu mintermul m10 şi mintermul m12 (mintermii m10 şi m12 aparţin grupei 2, cu douǎ unitǎţi), etc.
 
 
 
