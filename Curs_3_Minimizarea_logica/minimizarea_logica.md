@@ -114,6 +114,17 @@ Calculul prin care se gǎsesc acoperirile minime iredundante este realizat în c
 Matricea, tabelul, de incidenţǎ are câte o coloanǎ pentru fiecare termen canonic al funcţiei, şi câte o linie pentru fiecare implicant prim calculat prin algoritmul precedent.
 Este de menţionat un aspect remarcabil legat de termenii canonici neprecizaţi ai funcţiei. Aceştia au fost utilizaţi atunci când s-au generat implicanţii primi, dar nu vor fi consideraţi în problema de acoperire deoarece termenii, pentru care funcţia are valoare neprecizatǎ, nu trebuie acoperiţi. Matricea de incidenţǎ se completeazǎ linie cu linie. Deîndatǎ ce implicantul prim p<sub>i</sub>, corespunzǎtor liniei i din matrice, acoperǎ, sau conţine, termenul canonic m<sub>j</sub> corespunzǎtor coloanei j, elementul matricei a<sub>ij</sub>, este marcat cu simbolul [x] altfel spaţiu. În maniera aceasta sunt marcate toate elementele matricei.
 
+Matricea de incidenţǎ a termenilor canonici şi a implicanţilor primi este alcǎtuitǎ, aşa cum s-a descris anterior şi este prezentatǎ în tabelul 5.
+
+|Implicanti primit \ Termeni canonici | 0 | 3 |4  | 7 |8  |10 |11 |12 |14 | 15 | 18 | 19 | 23 | 26 | 28 | 29 | 30 |
+|------------------------------------ |---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|
+|1001-                                |   |   |   |   |   |   |   |   |   |    |[x] |[x] |    |    |    |    |    |
+|1-010                                |   |   |   |   |   |   |   |   |   |    |[x] |    |    |[x] |    |    |    |
+
+
+Tabelul 6. Matricea de incidenta
+
+
 ## Minimizarea euristica
 
 ## Link-uri utile - Utilitare (sub windows) pentru minimizare logica:
