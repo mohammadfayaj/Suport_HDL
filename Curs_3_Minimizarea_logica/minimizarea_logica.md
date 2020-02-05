@@ -56,7 +56,7 @@ Tabel 1. Mintermi, reprezentarea lor binara si ponderea lor
 
 Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a procesului de generare a tuturor implicanţilor primi.
 
-|Clase   | Acoperire | Implicanti (ord. 0)   |
+|Clase   | Acoperire<br>Implicanti (ord. 0)  |  Imagine binara <br> ABCDE |
 |--------|----------|--------|
 | 0 | m<sub>0</sub>  | 00000 [x] |
 | 1 | m<sub>4</sub> </br>m<sub>8</sub>   | 00100 [x]<br>01000 [x]  |
@@ -76,16 +76,43 @@ Privind tabelul 2, se poate constata  cǎ mintermul m<sub>0</sub> (fǎcând part
 
 Simbolul [x] inserat în dreapta reprezentării binare a implicanţilor marcheazî implicanţii care au fost incluşi în implicanţii de ordin superior în procesul de generare al acestora. Astfel, atât mintermul m<sub>8</sub> cât şi mintermul m<sub>10</sub>, primesc simbolul [x] în coloana imaginii binare. Se poate remarca faptul cǎ, în tabelul 2, toţi implicanţii de ordinul 0 au asociat simbolul [x] în coloana etichetatǎ prin ABCDE. 
 
-Rezultatele grupǎrilor mintermilor din Tabelul 2 se pot urmǎri în coloanele acorperirilor si implicantilor (de ordin 1)  din Tabelul 3.
+Rezultatele grupǎrilor mintermilor din Tabelul 2 se pot urmǎri în coloanele acorperirilor/implicantilor (de ordin 1) si imaginilor binare din Tabelul 3.
 
-| Clasa | Acoperire | Implicanti (ord 1) |
+| Clasa | Acoperire <br>Implicanti (ord 1)  | Imagine binara <br> ABCDE |
 |---------|---------|---------|
 | 0  | 0, 4 <br> 0, 8 | 00-00 [x]<br> 0-000 [x]|
 | 1  | 4, 12 <br> 8, 10 <br> 8, 12 | 0-100 [x]<br> 010-0 [x]<br> 01-00 [x]|
 | 2  | 3,7<br>3,11<br>3,19<br>10,11<br>10,14<br>10,26<br>12,14<br>12,28<br>18,19<br>18,26 |00–11  [x] <br>0–011 [x] <br>-0011  [x] <br>0101-  [x] <br>01–10  [x] <br>-1010  [x] <br>011–0  [x] <br>-1100  [x] <br>1001 -  [x] <br>1–010  [x]|
 | 2  | 7,15<br>7,23<br>11,15<br>14,15<br>14,30<br>19,23<br>26,30<br>28,29<br> 28,30 |0–111  [x] <br>-0111 [x] <br>01–11  [x] <br>0111–  [x] <br>-1110  [x] <br>10–11  [x] <br>11–10  [x] <br>1110-  [ ] <br>111–0  [x] |
 
+Tabel 3. Implicanţii de ordinul 1 ai funcţiei f(A,B,C,D,E) 
 
+Tabelul 3 faciliteazǎ reluarea procesului de grupare dar, de data aceasta, între implicanţii de ordinul 1 (acoperind fiecare doi implicanţi de ordinul 0). Ca şi în tabelul precedent sunt inserate simboluri  [x] în dreapta imaginii binare a unor implicanţi de ordinul 1. Şi în acest caz, aceasta reprezintǎ faptul cǎ respectivii implicanţi au fost incluşi în implicanţii de ordin superior (succesori), respectiv implicanţii de ordinul 2 (tabelul 4). Dar, spre deosebire de tabelul 2, aici în tabelul 3 sunt imagini binare care nu au acest simbol. Respectivele imagini binare descriu implicanţi primi (respectivii implicanţi nu mai pot fi extinşi astfel încât sǎ acopere mai mulţi mintermi).
+
+Tabelul 4 aratǎ cǎ procesul de grupare al implicanţilor din acest exemplu s-a încheiat. Aşa cum este alcǎtuit tabelul 3 nu se mai pot face alte grupǎri între implicanţii de ordinul 2. În consecinţǎ, coloana imaginii binare  nu conţine nici un, simbol [x]. Toţi implicanţii de ordinul 2 sunt primi. Procesul generǎrii mulţimii tuturor implicanţilor primi s-a încheiat.
+
+
+| Clasa | Acoperire <br>Implicanti (ord 1)  | Imagine binara <br> ABCDE |
+|---------|---------|---------|
+| 0  | 0,4,8,12<br> 0,8,4,12 | 00-00 [ ]<br> (00-00) [ ]|
+| 1  | 8,10,12,14<br> 8,12,10,14 | 01--0 [ ]<br> (01--0) [ ]|
+| 1  | 3,7,11,15<br>3,7,19,23 <> br 3,11,7,15 <br> 3,19,7,23 <br> 10,11,14,15 <br> 10,14,26,30 <br> 10,26,14,30 <br> 12,14,28,30 <br>12,28,14,30|  0--11 [ ]<br> -0-11 [ ] <br> (0--11) [ ]<br> (-0-11) [ ]<br> 01-1- [ ]<br> -1-10 [ ]<br> (-1-10) [ ]<br> -11-0 [ ]<br>(-11-0) [ ]|
+
+Tabel 4. Implicanţii de ordinul 2 ai funcţiei f(A,B,C,D,E) 
+
+Parantezele rotunde între care sunt scrişi unii dintre implicanţii de ordinul 2 vin sǎ sublinieze faptul cǎ acei implicanţi se repetǎ urmând sǎ fie consideraţi o singurǎ datǎ.
+Din calculul descris succint în tabelele 2, 3 şi 4 se pot determina toţi implicanţii primi ai funcţiei. Aceştia sunt descriptibili, în mod unic, prin mintermii acoperiţi: (18,19), (18,26), (28,29), (0,4,8,12), (8,10,12,14), (3,7,11,15), (3,19,7,23), (10,11,14,15), (10,14,26,30) şi (12,14,28,30).
+Implicanţii primi sunt, adesea, ilustraţi şi prin imaginea binarǎ asociatǎ lor. Funcţia scalarǎ poate fi descrisǎ prin suma implicanţilor sǎi primi. Aceasta sumǎ de produse prime nu este minimǎ dar poate fi minimizatǎ:
+
+F(A,B,C,D,E) = AB'C'D + AC'DE' + ABCD' + A'D'E' + A'BE' + A'DE + B'DE + A'BD + BDE' + BCE'.
+
+Pot sǎ existe, în general, multiple variante de obţinere a unei acoperiri minimale care sǎ cuprindǎ mai puţini termeni produs.
+Calculul prin care se gǎsesc acoperirile minime iredundante este realizat în cel de-al doilea pas al algoritmului Quine – Mc Cluskey.
+
+### Determinarea acoperirilor prime minime şi minimale.
+
+Matricea, tabelul, de incidenţǎ are câte o coloanǎ pentru fiecare termen canonic al funcţiei, şi câte o linie pentru fiecare implicant prim calculat prin algoritmul precedent.
+Este de menţionat un aspect remarcabil legat de termenii canonici neprecizaţi ai funcţiei. Aceştia au fost utilizaţi atunci când s-au generat implicanţii primi, dar nu vor fi consideraţi în problema de acoperire deoarece termenii, pentru care funcţia are valoare neprecizatǎ, nu trebuie acoperiţi. Matricea de incidenţǎ se completeazǎ linie cu linie. Deîndatǎ ce implicantul prim pi, corespunzǎtor liniei i din matrice, acoperǎ, sau conţine, termenul canonic mj corespunzǎtor coloanei j, elementul matricei aij, este marcat cu simbolul *, altfel spaţiu. În maniera aceasta sunt marcate toate elementele matricei.
 
 ## Minimizarea euristica
 
