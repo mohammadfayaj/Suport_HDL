@@ -112,7 +112,7 @@ Calculul prin care se gǎsesc acoperirile minime iredundante este realizat în c
 ### Determinarea acoperirilor prime minime şi minimale.
 
 Matricea, tabelul, de incidenţǎ are câte o coloanǎ pentru fiecare termen canonic al funcţiei, şi câte o linie pentru fiecare implicant prim calculat prin algoritmul precedent.
-Este de menţionat un aspect remarcabil legat de termenii canonici neprecizaţi ai funcţiei. Aceştia au fost utilizaţi atunci când s-au generat implicanţii primi, dar nu vor fi consideraţi în problema de acoperire deoarece termenii, pentru care funcţia are valoare neprecizatǎ, nu trebuie acoperiţi. Matricea de incidenţǎ se completeazǎ linie cu linie. Deîndatǎ ce implicantul prim pi, corespunzǎtor liniei i din matrice, acoperǎ, sau conţine, termenul canonic mj corespunzǎtor coloanei j, elementul matricei aij, este marcat cu simbolul *, altfel spaţiu. În maniera aceasta sunt marcate toate elementele matricei.
+Este de menţionat un aspect remarcabil legat de termenii canonici neprecizaţi ai funcţiei. Aceştia au fost utilizaţi atunci când s-au generat implicanţii primi, dar nu vor fi consideraţi în problema de acoperire deoarece termenii, pentru care funcţia are valoare neprecizatǎ, nu trebuie acoperiţi. Matricea de incidenţǎ se completeazǎ linie cu linie. Deîndatǎ ce implicantul prim p<sub>i</sub>, corespunzǎtor liniei i din matrice, acoperǎ, sau conţine, termenul canonic m<sub>j</sub> corespunzǎtor coloanei j, elementul matricei a<sub>ij</sub>, este marcat cu simbolul [x] altfel spaţiu. În maniera aceasta sunt marcate toate elementele matricei.
 
 ## Minimizarea euristica
 
@@ -129,6 +129,8 @@ Instructiuni utilizare [sis](https://user.eng.umd.edu/~gangqu/ToVictoria/tutoria
 
 ## Quine-McCluskey
 
-[1] Dr.Ing.Mat. Ion I. Bucur, "Metoda Quine – McCluskey" - Note de curs [link](http://andrei.clubcisco.ro/cursuri/1pl/cursuri/Metoda%20Quine-McCluskey.pdf)
-[2] Implementarea algoritmului Quine-McCluskey, www.regielive.ro, [link](https://biblioteca.regielive.ro/proiecte/calculatoare/implementarea-algoritmului-quine-mccluskey-24929.html)
+[1]. Dr.Ing.Mat. Ion I. Bucur, "Metoda Quine – McCluskey" - Note de curs [link](http://andrei.clubcisco.ro/cursuri/1pl/cursuri/Metoda%20Quine-McCluskey.pdf)
+
+[2]. Implementarea algoritmului Quine-McCluskey, www.regielive.ro, [link](https://biblioteca.regielive.ro/proiecte/calculatoare/implementarea-algoritmului-quine-mccluskey-24929.html)
+
 [3]. Jiangbo Huang, "Programing implementation of the Quine-McCluskey method for minimization of Boolean expression "[link](https://arxiv.org/ftp/arxiv/papers/1410/1410.1059.pdf)
