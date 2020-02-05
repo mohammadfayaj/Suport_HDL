@@ -125,5 +125,10 @@ Este de menţionat un aspect remarcabil legat de termenii canonici neprecizaţi 
 
 Instructiuni utilizare [sis](https://user.eng.umd.edu/~gangqu/ToVictoria/tutorial-www_diit_unict_it_introduzione_sis.pdf)
 
-Referinte
+# Referinte 
+
+## Quine-McCluskey
+
 [1] Dr.Ing.Mat. Ion I. Bucur, "Metoda Quine – McCluskey" - Note de curs [link](http://andrei.clubcisco.ro/cursuri/1pl/cursuri/Metoda%20Quine-McCluskey.pdf)
+[2] Implementarea algoritmului Quine-McCluskey, www.regielive.ro, [link](https://biblioteca.regielive.ro/proiecte/calculatoare/implementarea-algoritmului-quine-mccluskey-24929.html)
+[3]. Jiangbo Huang, "Programing implementation of the Quine-McCluskey method for minimization of Boolean expression "[link](https://arxiv.org/ftp/arxiv/papers/1410/1410.1059.pdf)
