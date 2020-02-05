@@ -76,12 +76,16 @@ Privind tabelul 2, se poate constata  cǎ mintermul m<sub>0</sub> (fǎcând part
 
 Simbolul [x] inserat în dreapta reprezentării binare a implicanţilor marcheazî implicanţii care au fost incluşi în implicanţii de ordin superior în procesul de generare al acestora. Astfel, atât mintermul m<sub>8</sub> cât şi mintermul m<sub>10</sub>, primesc simbolul [x] în coloana imaginii binare. Se poate remarca faptul cǎ, în tabelul 2, toţi implicanţii de ordinul 0 au asociat simbolul [x] în coloana etichetatǎ prin ABCDE. 
 
-Rezultatele grupǎrilor mintermilor din Tabelul 2 se pot urmǎri în coloanele implicantilor (de ordin 1) si  (X<sub>4</sub> X<sub>3</sub> X<sub>2</sub> X<sub>1</sub> X<sub>0</sub>) din Tabelul 3.
+Rezultatele grupǎrilor mintermilor din Tabelul 2 se pot urmǎri în coloanele acorperirilor si implicantilor (de ordin 1)  din Tabelul 3.
 
 | Clasa | Acoperire | Implicanti (ord 1) |
 |---------|---------|---------|
 | 0  | 0, 4 <br> 0, 8 | 00-00 [x]<br> 0-000 [x]|
 | 1  | 4, 12 <br> 8, 10 <br> 8, 12 | 0-100 [x]<br> 010-0 [x]<br> 01-00 [x]|
+| 2  | 3,7<br>3,11<br>3,19<br>10,11<br>10,14<br>10,26<br>12,14<br>12,28<br>18,19<br>18,26 |00–11  [x] <br>0–011 [x] <br>-0011  [x] <br>0101-  [x] <br>01–10  [x] <br>-1010  [x] <br>011–0  [x] <br>-1100  [x] <br>1001 -  [x] <br>1–010  [x]|
+| 2  | 7,15<br>7,23<br>11,15<br>14,15<br>14,30<br>19,23<br>26,30<br>28,29<br> 28,30 |0–111  [x] <br>-0111 [x] <br>01–11  [x] <br>0111–  [x] <br>-1110  [x] <br>10–11  [x] <br>11–10  [x] <br>1110-  [ ] <br>111–0  [x] |
+
+
 
 ## Minimizarea euristica
 
