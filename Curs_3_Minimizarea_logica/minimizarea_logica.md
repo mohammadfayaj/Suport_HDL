@@ -31,7 +31,7 @@ f(A,B,C,D,E) = \{m<sub>0</sub> + m<sub>3</sub> + m<sub>4</sub> + m<sub>7</sub> +
 
 Funcţia are 5 variabile care se noteaza : A, B, C, D şi E. 
 
-| Minterm | ABCDE | Pondere |
+| Minterm | Implicant (ord 0) | Pondere |
 |---------|---------|---------|
 | m<sub>0</sub>  | 00000 | 0 |
 | m<sub>3</sub>  | 00100 | 1 |
@@ -56,7 +56,7 @@ Tabel 1. Mintermi, reprezentarea lor binara si ponderea lor
 
 Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a procesului de generare a tuturor implicanţilor primi.
 
-|Clase   | Implicanti (ord. 0)  | ABCDE  |
+|Clase   | Acoperire | Implicanti (ord. 0)   |
 |--------|----------|--------|
 | 0 | m<sub>0</sub>  | 00000 [x] |
 | 1 | m<sub>4</sub> </br>m<sub>8</sub>   | 00100 [x]<br>01000 [x]  |
@@ -76,8 +76,12 @@ Privind tabelul 2, se poate constata  cǎ mintermul m<sub>0</sub> (fǎcând part
 
 Simbolul [x] inserat în dreapta reprezentării binare a implicanţilor marcheazî implicanţii care au fost incluşi în implicanţii de ordin superior în procesul de generare al acestora. Astfel, atât mintermul m<sub>8</sub> cât şi mintermul m<sub>10</sub>, primesc simbolul [x] în coloana imaginii binare. Se poate remarca faptul cǎ, în tabelul 2, toţi implicanţii de ordinul 0 au asociat simbolul [x] în coloana etichetatǎ prin ABCDE. 
 
-Rezultatele grupǎrilor mintermilor din tabelul 2 se pot urmǎri în coloanele indicilor şi implicanţilor (X4 X3 X2 X1 X0) din tabelul 1b.
+Rezultatele grupǎrilor mintermilor din Tabelul 2 se pot urmǎri în coloanele implicantilor (de ordin 1) si  (X<sub>4</sub> X<sub>3</sub> X<sub>2</sub> X<sub>1</sub> X<sub>0</sub>) din Tabelul 3.
 
+| Clasa | Acoperire | Implicanti (ord 1) |
+|---------|---------|---------|
+| 0  | 0, 4 <br> 0, 8 | 00-00 [x]<br> 0-000 [x]|
+| 1  | 4, 12 <br> 8, 10 <br> 8, 12 | 0-100 [x]<br> 010-0 [x]<br> 01-00 [x]|
 
 ## Minimizarea euristica
 
