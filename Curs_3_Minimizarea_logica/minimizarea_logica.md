@@ -126,11 +126,37 @@ Matricea de incidenţǎ a termenilor canonici şi a implicanţilor primi este al
 |0--11                                |   |[x]|   |[x]|   |   |   |[x]|   |[x] |    |    |    |    |    |    |    |
 |-0-11                                |   |[x]|   |[x]|   |   |   |   |   |    |    |[x] |[x] |    |    |    |    |
 |01-1-                                |   |   |   |   |   |[x]|[x]|   |[x]|[x] |    |    |    |    |    |    |    |
-|-1-10                                |   |   |   |   |   |[x]|   |   |[x]|[x] |    |    |    |[x] |    |    |[x] |
+|-1-10                                |   |   |   |   |   |[x]|   |   |[x]|    |    |    |    |[x] |    |    |[x] |
 |-11-0                                |   |   |   |   |   |   |   |[x]|[x]|    |    |    |    |    |[x] |    |[x] |
 
 
 Tabelul 6. Matricea de incidenta
+
+Deoarece implicantul prim 1110- este unicul implicant prim care acoperǎ termenul canonic m<sub>29</sub> acesta este esenţial. Aceasta înseamnǎ cǎ în orice soluţie de acoperire a funcţiei, acest implicant prim este sigur selecţionat. Îndepărtarea din matrice a acestui implicant prim conduce la îndepǎrtarea coloanelor corespunzǎtoare termenilor canonici: m<sub>28</sub> şi m<sub>2</sub>9 acoperiţi de implicantul prim 1110-.
+
+Mai sunt încǎ doi implicanţi primi esenţiali în matrice. Implicantul prim 0--00 este esenţial (a se vedea coloanele corespunzǎtoare mintermilor m<sub>0</sub> şi <sub>m4</sub>). Îndepǎrtarea acestui implicant prim se soldeazǎ cu eliminarea coloanelor corespunzǎtoare mintermilor: m<sub>0</sub> ,m<sub>4</sub> ,m<sub>8</sub>  şi m<sub>12</sub>.
+
+Al treilea implicant prim esenţial este -0-11 (din cauza coloanei corespunzǎtoare mintermului m<sub>23</sub>). Îndepǎrtarea acestui implicant prim produce eliminarea coloanelor corespunzǎtoare mintermilor: m<sub>3</sub>), m<sub>7</sub>), m<sub>19 </sub>)şi m<sub>23</sub>).
+
+În tabelul 7 este prezentatǎ matricea care rezultǎ dupǎ eliminarea implicanţilor esenţiali şi a termenilor canonici acoperiţi de aceştia. S-a introdus, faţǎ de tabele 2 şi 3, coloana care conţine numǎrul curent al fiecǎrei linii, respectiv indexul liniei. Aceastǎ coloanǎ este menitǎ sǎ faciliteze urmǎrirea comparaţiei dintre liniile matricei dar va fi utilizatǎ şi ulterior în calculul formulei lui Petrick asociat acestei matrice.
+
+|Implicanti primit \ Termeni canonici |10 |11 |14 | 15 | 18 | 26 | 30 |nr crt|
+|------------------------------------ |---|---|---|----|----|----|----|------|
+|1001-                                |   |   |   |    |**[x]** |    |    |1|
+|1-010                                |   |   |   |    |[x] |[x] |    |2|
+|01--0                                |**[x]**|   |**[x]**|    |    |    |    |3|
+|0--11                                |   |**[x]**|   |**[x]** |    |    |    |4|
+|01-1-                                |[x]|[x]|[x]|[x] |    |    |    |5|
+|-1-10                                |[x]|   |[x]|    |    |[x] |[x] |6|
+|-11-0                                |   |   |**[x]**|    |    |    |**[x]** |7|
+
+Tabelul 7. Matricea de incidenta redusa, dupa eliminiarea implicantilor esentiali
+
+Din tabelul 7 se pot identifica implicantii care sunt acoperiti de alti implicanti, ca urmare nu participa in acoperirea finala. De exemplu:
+Linia 1 din matricea redusǎ, prezentatǎ în tabelul 7, corespunzǎtoare implicantului prim 1001-, este dominatǎ de linia 2, a implicantului prim 1-010. Primul implicant, 1001-, este eliminat. 
+Linia 5, a implicantului prim 01-1-, dominǎ liniile 4 şi 3, ale implicanţilor 0--11 şi 01--0. Implicanţii primi 0--11 şi 01--0 vor fi eliminaţi din matrice.
+Linia 6, a implicantului prim -1-10 dominǎ linia 7, a implicantului -11-0. Acesta din urmǎ, -11-0, va fi eliminat din matrice.
+În tabelul 7 liniile dominate din matricea de incidenţǎ redusǎ, sunt marcate în prin subliniere.
 
 
 ## Minimizarea euristica
