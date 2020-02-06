@@ -14,12 +14,13 @@ Al doilea criteriu de clasificare priveste module de operare a procedeului de mi
 * metode euristice (minimizarea Espresso)
 
 ## Minimiarea algebraic (metoda Quine-MCClusky)
+
 Algoritmul Quine-McClusky, denumit si metoda implicantilor primi este o metoda folosita pentru minimizarea funtiilor booleene, dezvoltata de logicianul Willard Van Orman Quine si extinsa de Edward J. McCluskey. Metoda Quine-McClusky este utilizabilǎ, în principiu, pentru minimizarea funcţiilor scalare ori vectoriale cu un numǎr arbitrar de variabile.
 Minimizarea are loc în doi paşi:
 (1) Generarea mulţimii implicanţilor primi
 (2) calculul acoperirii minimale pentru funcţia respectivǎ.
 
-### Generarea mulţimii implicanţilor primi
+### Determinarea implicanţilor primi
 
 Terminologie: În calculul implicanţilor primi, mintermii funcţiei sunt numiţi implicanţi, sau cuburi, de ordinul 0 ai funcţiei. În timp ce, implicanţii care rezultǎ prin reducerea unei variabile sau a douǎ sau mai multor variabile, sunt implicanţi de ordinul unu, respectiv de ordinul doi ori superior.
 
@@ -31,7 +32,7 @@ f(A,B,C,D,E) = \{m<sub>0</sub> + m<sub>3</sub> + m<sub>4</sub> + m<sub>7</sub> +
 
 Funcţia are 5 variabile care se noteaza : A, B, C, D şi E. 
 
-| Minterm | ABCDE | Pondere |
+| Minterm | Implicant (ord 0) | Pondere |
 |---------|---------|---------|
 | m<sub>0</sub>  | 00000 | 0 |
 | m<sub>3</sub>  | 00100 | 1 |
@@ -56,7 +57,7 @@ Tabel 1. Mintermi, reprezentarea lor binara si ponderea lor
 
 Transcriind şi grupând mintermii în clase se poate începe etapa iterativǎ a procesului de generare a tuturor implicanţilor primi.
 
-|Clase   | Implicanti (ord. 0)  | ABCDE  |
+|Clase   | Acoperire<br>Implicanti (ord. 0)  |  Imagine binara <br> ABCDE |
 |--------|----------|--------|
 | 0 | m<sub>0</sub>  | 00000 [x] |
 | 1 | m<sub>4</sub> </br>m<sub>8</sub>   | 00100 [x]<br>01000 [x]  |
@@ -76,8 +77,158 @@ Privind tabelul 2, se poate constata  cǎ mintermul m<sub>0</sub> (fǎcând part
 
 Simbolul [x] inserat în dreapta reprezentării binare a implicanţilor marcheazî implicanţii care au fost incluşi în implicanţii de ordin superior în procesul de generare al acestora. Astfel, atât mintermul m<sub>8</sub> cât şi mintermul m<sub>10</sub>, primesc simbolul [x] în coloana imaginii binare. Se poate remarca faptul cǎ, în tabelul 2, toţi implicanţii de ordinul 0 au asociat simbolul [x] în coloana etichetatǎ prin ABCDE. 
 
-Rezultatele grupǎrilor mintermilor din tabelul 2 se pot urmǎri în coloanele indicilor şi implicanţilor (X4 X3 X2 X1 X0) din tabelul 1b.
+Rezultatele grupǎrilor mintermilor din Tabelul 2 se pot urmǎri în coloanele acorperirilor/implicantilor (de ordin 1) si imaginilor binare din Tabelul 3.
 
+| Clasa | Acoperire <br>Implicanti (ord 1)  | Imagine binara <br> ABCDE |
+|---------|---------|---------|
+| 0  | 0, 4 <br> 0, 8 | 00-00 [x]<br> 0-000 [x]|
+| 1  | 4, 12 <br> 8, 10 <br> 8, 12 | 0-100 [x]<br> 010-0 [x]<br> 01-00 [x]|
+| 2  | 3,7<br>3,11<br>3,19<br>10,11<br>10,14<br>10,26<br>12,14<br>12,28<br>18,19<br>18,26 |00–11  [x] <br>0–011 [x] <br>-0011  [x] <br>0101-  [x] <br>01–10  [x] <br>-1010  [x] <br>011–0  [x] <br>-1100  [x] <br>1001 -  [x] <br>1–010  [x]|
+| 2  | 7,15<br>7,23<br>11,15<br>14,15<br>14,30<br>19,23<br>26,30<br>28,29<br> 28,30 |0–111  [x] <br>-0111 [x] <br>01–11  [x] <br>0111–  [x] <br>-1110  [x] <br>10–11  [x] <br>11–10  [x] <br>1110-  [ ] <br>111–0  [x] |
+
+Tabel 3. Implicanţii de ordinul 1 ai funcţiei f(A,B,C,D,E) 
+
+Tabelul 3 faciliteazǎ reluarea procesului de grupare dar, de data aceasta, între implicanţii de ordinul 1 (acoperind fiecare doi implicanţi de ordinul 0). Ca şi în tabelul precedent sunt inserate simboluri  [x] în dreapta imaginii binare a unor implicanţi de ordinul 1. Şi în acest caz, aceasta reprezintǎ faptul cǎ respectivii implicanţi au fost incluşi în implicanţii de ordin superior (succesori), respectiv implicanţii de ordinul 2 (tabelul 4). Dar, spre deosebire de tabelul 2, aici în tabelul 3 sunt imagini binare care nu au acest simbol. Respectivele imagini binare descriu implicanţi primi (respectivii implicanţi nu mai pot fi extinşi astfel încât sǎ acopere mai mulţi mintermi).
+
+Tabelul 4 aratǎ cǎ procesul de grupare al implicanţilor din acest exemplu s-a încheiat. Aşa cum este alcǎtuit tabelul 3 nu se mai pot face alte grupǎri între implicanţii de ordinul 2. În consecinţǎ, coloana imaginii binare  nu conţine nici un, simbol [x]. Toţi implicanţii de ordinul 2 sunt primi. Procesul generǎrii mulţimii tuturor implicanţilor primi s-a încheiat.
+
+
+| Clasa | Acoperire <br>Implicanti (ord 1)  | Imagine binara <br> ABCDE |
+|---------|---------|---------|
+| 0  | 0,4,8,12<br> 0,8,4,12 | 00-00 [ ]<br> (00-00) [ ]|
+| 1  | 8,10,12,14<br> 8,12,10,14 | 01--0 [ ]<br> (01--0) [ ]|
+| 1  | 3,7,11,15<br>3,7,19,23 <> br 3,11,7,15 <br> 3,19,7,23 <br> 10,11,14,15 <br> 10,14,26,30 <br> 10,26,14,30 <br> 12,14,28,30 <br>12,28,14,30|  0--11 [ ]<br> -0-11 [ ] <br> (0--11) [ ]<br> (-0-11) [ ]<br> 01-1- [ ]<br> -1-10 [ ]<br> (-1-10) [ ]<br> -11-0 [ ]<br>(-11-0) [ ]|
+
+Tabel 4. Implicanţii de ordinul 2 ai funcţiei f(A,B,C,D,E) 
+
+Parantezele rotunde între care sunt scrişi unii dintre implicanţii de ordinul 2 vin sǎ sublinieze faptul cǎ acei implicanţi se repetǎ urmând sǎ fie consideraţi o singurǎ datǎ.
+Din calculul descris succint în tabelele 2, 3 şi 4 se pot determina toţi implicanţii primi ai funcţiei. Aceştia sunt descriptibili, în mod unic, prin mintermii acoperiţi: (18,19), (18,26), (28,29), (0,4,8,12), (8,10,12,14), (3,7,11,15), (3,19,7,23), (10,11,14,15), (10,14,26,30) şi (12,14,28,30).
+Implicanţii primi sunt, adesea, ilustraţi şi prin imaginea binarǎ asociatǎ lor. Funcţia scalarǎ poate fi descrisǎ prin suma implicanţilor sǎi primi. Aceasta sumǎ de produse prime nu este minimǎ dar poate fi minimizatǎ:
+
+F(A,B,C,D,E) = AB'C'D + AC'DE' + ABCD' + A'D'E' + A'BE' + A'DE + B'DE + A'BD + BDE' + BCE'.
+
+Pot sǎ existe, în general, multiple variante de obţinere a unei acoperiri minimale care sǎ cuprindǎ mai puţini termeni produs.
+Calculul prin care se gǎsesc acoperirile minime iredundante este realizat în cel de-al doilea pas al algoritmului Quine – Mc Cluskey.
+
+### Determinarea acoperirilor prime minime şi minimale.
+
+Matricea, tabelul, de incidenţǎ are câte o coloanǎ pentru fiecare termen canonic al funcţiei, şi câte o linie pentru fiecare implicant prim calculat prin algoritmul precedent.
+Este de menţionat un aspect remarcabil legat de termenii canonici neprecizaţi ai funcţiei. Aceştia au fost utilizaţi atunci când s-au generat implicanţii primi, dar nu vor fi consideraţi în problema de acoperire deoarece termenii, pentru care funcţia are valoare neprecizatǎ, nu trebuie acoperiţi. Matricea de incidenţǎ se completeazǎ linie cu linie. Deîndatǎ ce implicantul prim p<sub>i</sub>, corespunzǎtor liniei i din matrice, acoperǎ, sau conţine, termenul canonic m<sub>j</sub> corespunzǎtor coloanei j, elementul matricei a<sub>ij</sub>, este marcat cu simbolul [x] altfel spaţiu. În maniera aceasta sunt marcate toate elementele matricei.
+
+Matricea de incidenţǎ a termenilor canonici şi a implicanţilor primi este alcǎtuitǎ, aşa cum s-a descris anterior şi este prezentatǎ în tabelul 5.
+
+|Implicanti primi \ Termeni canonici | 0 | 3 |4  | 7 |8  |10 |11 |12 |14 | 15 | 18 | 19 | 23 | 26 | 28 | 29 | 30 |
+|------------------------------------ |---|---|---|---|---|---|---|---|---|----|----|----|----|----|----|----|----|
+|1001-                                |   |   |   |   |   |   |   |   |   |    |[x] |[x] |    |    |    |    |    |
+|1-010                                |   |   |   |   |   |   |   |   |   |    |[x] |    |    |[x] |    |    |    |
+|1110-                                |   |   |   |   |   |   |   |   |   |    |    |    |    |    |[x] |[x] |    |
+|0--00                                |[x]|   |[x]|   |[x]|   |   |[x]|   |    |    |    |    |    |    |    |    |
+|01--0                                |   |   |   |   |[x]|[x]|   |[x]|[x]|    |    |    |    |    |    |    |    |
+|0--11                                |   |[x]|   |[x]|   |   |   |[x]|   |[x] |    |    |    |    |    |    |    |
+|-0-11                                |   |[x]|   |[x]|   |   |   |   |   |    |    |[x] |[x] |    |    |    |    |
+|01-1-                                |   |   |   |   |   |[x]|[x]|   |[x]|[x] |    |    |    |    |    |    |    |
+|-1-10                                |   |   |   |   |   |[x]|   |   |[x]|    |    |    |    |[x] |    |    |[x] |
+|-11-0                                |   |   |   |   |   |   |   |[x]|[x]|    |    |    |    |    |[x] |    |[x] |
+
+
+Tabelul 6. Matricea de incidenta
+
+Deoarece implicantul prim **1110-** este unicul implicant prim care acoperǎ termenul canonic m<sub>29</sub> acesta este esenţial. Aceasta înseamnǎ cǎ în orice soluţie de acoperire a funcţiei, acest implicant prim este sigur selecţionat. Îndepărtarea din matrice a acestui implicant prim conduce la îndepǎrtarea coloanelor corespunzǎtoare termenilor canonici: m<sub>28</sub> şi m<sub>2</sub>9 acoperiţi de implicantul prim 1110-.
+
+Mai sunt încǎ doi implicanţi primi esenţiali în matrice. Implicantul prim **0--00** este esenţial (a se vedea coloanele corespunzǎtoare mintermilor m<sub>0</sub> şi <sub>m4</sub>). Îndepǎrtarea acestui implicant prim se soldeazǎ cu eliminarea coloanelor corespunzǎtoare mintermilor: m<sub>0</sub> ,m<sub>4</sub> ,m<sub>8</sub>  şi m<sub>12</sub>.
+
+Al treilea implicant prim esenţial este **-0-11** (din cauza coloanei corespunzǎtoare mintermului m<sub>23</sub>). Îndepǎrtarea acestui implicant prim produce eliminarea coloanelor corespunzǎtoare mintermilor: m<sub>3</sub>), m<sub>7</sub>), m<sub>19 </sub>)şi m<sub>23</sub>).
+
+În tabelul 7 este prezentatǎ matricea care rezultǎ dupǎ eliminarea implicanţilor esenţiali şi a termenilor canonici acoperiţi de aceştia. S-a introdus, faţǎ de tabele 2 şi 3, coloana care conţine numǎrul curent al fiecǎrei linii, respectiv indexul liniei. Aceastǎ coloanǎ este menitǎ sǎ faciliteze urmǎrirea comparaţiei dintre liniile matricei dar va fi utilizatǎ şi ulterior în calculul formulei lui Petrick asociat acestei matrice.
+
+|Implicanti primi \ Termeni canonici |10 |11 |14 | 15 | 18 | 26 | 30 |nr crt|
+|------------------------------------ |---|---|---|----|----|----|----|------|
+|1001-                                |   |   |   |    |**[x]** |    |    |1|
+|1-010                                |   |   |   |    |[x] |[x] |    |2|
+|01--0                                |**[x]**|   |**[x]**|    |    |    |    |3|
+|0--11                                |   |**[x]**|   |**[x]** |    |    |    |4|
+|01-1-                                |[x]|[x]|[x]|[x] |    |    |    |5|
+|-1-10                                |[x]|   |[x]|    |    |[x] |[x] |6|
+|-11-0                                |   |   |**[x]**|    |    |    |**[x]** |7|
+
+Tabelul 7. Matricea de incidenta redusa, dupa eliminiarea implicantilor esentiali
+
+Din tabelul 7 se pot identifica implicantii care sunt acoperiti de alti implicanti, ca urmare nu participa in acoperirea finala. De exemplu:
+Linia 1 din matricea redusǎ, prezentatǎ în tabelul 7, corespunzǎtoare implicantului prim 1001-, este dominatǎ de linia 2, a implicantului prim 1-010. Primul implicant, 1001-, este eliminat. 
+Linia 5, a implicantului prim 01-1-, dominǎ liniile 4 şi 3, ale implicanţilor 0--11 şi 01--0. Implicanţii primi 0--11 şi 01--0 vor fi eliminaţi din matrice.
+Linia 6, a implicantului prim -1-10 dominǎ linia 7, a implicantului -11-0. Acesta din urmǎ, -11-0, va fi eliminat din matrice.
+În tabelul 7 liniile dominate din matricea de incidenţǎ redusǎ, sunt marcate în prin subliniere.
+
+Toţi implicanţii eliminaţi, în urma dominanţei altor implicanţi primi, nu vor fi utilizaţi în calculul soluţiilor de acoperire a funcţiei f.
+Se poate remarca faptul cǎ, implicanţii eliminaţi (0--11, 01--0, -11-0 şi 1001-) nu mai apar, în actuala matrice, ca fiind implicanţi primi (maximali) din cauza ştergerilor (anterioare) de linii şi coloane din matrice cauzate de extragerea implicanţilor primi esenţiali.
+
+
+|Implicanti primi \ Termeni canonici |10 |11 |14 | 15 | 18 | 26 | 30 |nr crt|
+|------------------------------------ |---|---|---|----|----|----|----|------|
+|1-010                                |   |   |   |    |[x] |[x] |    |1|
+|01-1-                                |[x]|[x]|[x]|[x] |    |    |    |2|
+|-1-10                                |[x]|   |[x]|    |    |[x] |[x] |3|
+
+
+Tabelul 8. Matricea finala
+
+Implicanţii primi care au mai rǎmas sunt toţi esenţiali, aşa cum se poate remarca din matricea de incidenţǎ finalǎ, prezentatǎ în tabelul 8. Functia minimizata este:
+
+f(A,B,C,D,E) = ABCD' + A'D'E’ + B'DE + BDE' + A'BD + AC'DE'.
+
+### Algortimul lui Patrik
+
+Acest algoritm permite, într-o formulare concisǎ, descrierea construcţiei tuturor soluţiilor peste un, eventual, nucleu ciclic al matricei de incidenţǎ.  
+ 
+Se consideră că termenii canonici unei funcţii f, sunt notaţi prin m<sub>j1</sub>,  m<sub>j2</sub>, m<sub>j3</sub>,... În continuare se cerceteazǎ matricea de incidenţe pe coloane. În maniera aceasta se  pot determina, pentru fiecare termen canonic, corespunzǎtor unei coloane, care sunt implicanţii primi care acoperǎ respectivul termen canonic.
+
+
+Cu aceşti implicanţi primi, asociaţi unui termen canonic mj, se construieşte o formulǎ Booleanǎ si constituitǎ prin sumarea logicǎ (disjuncţia) implicanţilor primi corespunzǎtori. Aceastǎ formulǎ se mai numeşte şi clauza respectivului minterm. 
+Se presupune, spre exemplu, cǎ implicanţii primi p<sub>1</sub>, p<sub>2</sub>, ..., p<sub>k</sub> , acoperǎ termenul canonic m<sub>j1</sub>.  Atunci, clauza ori formula Booleanǎ corespunzǎtoare termenului canonic m<sub>j1</sub> este:
+
+s<sub>j1</sub> = p<sub>1</sub> + p<sub>2</sub> + ... + p<sub>k</sub>.
+
+Explicaţia acestei construcţii rezidǎ în faptul cǎ implicantul prim p<sub>1</sub> sau implicantul  p<sub>2</sub> prim sau … implicantul prim  p<sub>k</sub> acoperǎ, în adevǎr, termenul canonic m<sub>j1</sub>.  Pe de-altǎ parte, trebuie acoperiţi cu implicanţi primi toţi termenii canonici, adicǎ **si** m<sub>j2</sub> **si** m<sub>j3</sub> **si** .... Apare, acum, justificatǎ determinarea expresiei:
+
+X = s<sub>j1</sub> * s<sub>j2</sub> * s<sub>j3</sub>... 
+
+ca furnizoare a tuturor soluţiilor de acoperire pentru matricea de incidenţǎ consideratǎ. Adeseeori sunt necesare soluţii de acoperire ale unei funcţii booleene care sǎ satisfacǎ anumite cerinţe specifice, sau, se cautǎ toate soluţiile cu un anumit cost. Algoritmul lui Petrik poate fi, în acest sens, foarte util. Acest algoritm, în principiu, furnizeazǎ toate soluţiile de acoperire pornind de la setul complet de implicanţi primi. 
+
+#### Exemplu
+
+Pentru funcţia din exemplul anterior, ştiind care sunt implicanţii esenţiali (cei care vor face parte din orice acoperire a funcţiei) se poate calcula care sunt ceilalţi implicanţi primi care pot fi utilizaţi în vederea unor acoperiri minimale. Considerând matricea de incidenţǎ din tabelul 7 (dupǎ îndepǎrtarea implicanţilor primi esenţiali) se pot calcula, rând pe rând, clauzele, termenii sumǎ, din
+algoritmului lui Petrik. În acest scop se va folosi ca identificator al implicanţilor primi din tabel, pentru simplificarea expresiilor, indexul ori numǎrul curent al acestora. Astfel se poate determina:
+
+c<sub>10</sub> = {3,5,6}, c<sub>11</sub> = {4,5}, c<sub>14</sub> = {3,5,6,7}, c<sub>15</sub> = {4,5}, c<sub>18</sub> = {1,2}, c<sub>26</sub> = {2,6}, c<sub>30</sub> ={6,7}.
+
+unde prin c<sub>10</sub>, spre exemplu, s-a notat clauza, ori mulţimea implicanţilor primi care acoperǎ termenul canonic m<sub>10</sub>. Se poate remarca un fapt care micşoreazǎ complexitatea calculului, clauzele c<sub>11</sub> şi c<sub>15</sub> sunt identice. Cu ajutorul acestor clauze se alcǎtuieşte expresia formalǎ, formula lui Petrick: 
+
+X =  {3+5+6} * {1+2} * {4+5} * {3+5+6+7} * {2+6} * {6+7}.
+
+Prin efectuarea calculului algebric în expresia anterioarǎ rezultǎ:
+
+X = 642 + 652 + 641 + 651 + 7532 + 76431 + 76531 + 7542 + 752 + 76541 + 7651. 
+
+Aceste grupuri de indici (separate prin +), identificǎ fiecare în parte o soluţie de acoperire alcǎtuitǎ din implicanţii primi respectivi. Astfel, grupul de indici 76431 aratǎ cǎ se poate constitui o acoperire primǎ minimalǎ cu cinci implicanţi primi: f = (-11-0) + (-1-10) + (0- -11) + (01- -0) + (1001-). 
+
+Dintre toate aceste forme, determinate prin metoda lui Petrick în raport cu implicanţii primi din matricea de incidenţǎ redusǎ prin îndepǎrtarea implicanţilor primi esenţiali, doar cinci sunt cu cost minim: 
+
+F = 642 + 652 + 641 + 651 + 752.
+
+Celelalte forme calculate sunt minimale. Se poate remarca prezenţa soluţiei determinate, în urma eliminǎrii liniilor dominate, în lista celor cinci acoperiri cu cost minim. 
+
+### Metoda Quine-McCluskey aplicatǎ funcţiilor scalare având termeni nespecificaţi
+
+Metoda Quine-McCluskey minimizeazǎ reprezentarea oricǎrei expresii Boole-ene. Aceastǎ metodǎ oferǎ o un procedeu sistematic pentru generarea mulţii implicanţilor primi urmatǎ de extragerea soluţiilor minime şi minimale de acoperire prime.
+
+### Determinarea implicanţilor primi
+
+Primul pas al metodei calculeazǎ implicanţii primi prin considerand si termeni nespecificati.
+
+### Determinarea matricii de incidenta
+
+Matricea de incidenţǎ dintre implicanţii primi ai funcţiei şi termenii canonici va cuprinde doar termenii canonici precizaţi, cei neprecizaţi nefiind referiţi. 
+ 
 
 ## Minimizarea euristica
 
@@ -90,5 +241,12 @@ Rezultatele grupǎrilor mintermilor din tabelul 2 se pot urmǎri în coloanele i
 
 Instructiuni utilizare [sis](https://user.eng.umd.edu/~gangqu/ToVictoria/tutorial-www_diit_unict_it_introduzione_sis.pdf)
 
-Referinte
-[1] Dr.Ing.Mat. Ion I. Bucur, "Metoda Quine – McCluskey" - Note de curs [link](http://andrei.clubcisco.ro/cursuri/1pl/cursuri/Metoda%20Quine-McCluskey.pdf)
+# Referinte 
+
+## Quine-McCluskey
+
+[1]. Dr.Ing.Mat. Ion I. Bucur, "Metoda Quine – McCluskey" - Note de curs [link](http://andrei.clubcisco.ro/cursuri/1pl/cursuri/Metoda%20Quine-McCluskey.pdf)
+
+[2]. Implementarea algoritmului Quine-McCluskey, www.regielive.ro, [link](https://biblioteca.regielive.ro/proiecte/calculatoare/implementarea-algoritmului-quine-mccluskey-24929.html)
+
+[3]. Jiangbo Huang, "Programing implementation of the Quine-McCluskey method for minimization of Boolean expression "[link](https://arxiv.org/ftp/arxiv/papers/1410/1410.1059.pdf)
