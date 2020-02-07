@@ -244,18 +244,19 @@ Minimizatorul logic Espresso este un utilitar pentru minimizarea functiilor logi
 
 ### Exemple de utilizare Espresso
 
-#### Exemplul 1.
-
+| Exemplul 1. | Rezultat |
+|-------------|----------|
+|
 ```text
 # comentariu
 .i 4 # variabile de intrare = 4
 .o 1 # variabile de iesire = 1
 .ilb A B C D # numele variabilelor de intrare
-.ob F # Numele variabilei de iesire
-0 0 0 0   0 (# tabelul de adevar, 4 intrari, o iesire)
+.ob F # numele variabilei de iesire
+0 0 0 0   0 # tabelul de adevar, 4 intrari, o iesire
 .e # Marcheaza sfarsitul fisierului
 ```
-
+| |
 
 ## Link-uri utile - Utilitare (sub windows) pentru minimizare logica:
 1. Minimizare euristica pe doua nivele [espresso](http://ramos.elo.utfsm.cl/~lsb/elo211/aplicaciones/aplicaciones/espresso/ESPRESSO%20Logic%20Minimization%20Software.htm)
