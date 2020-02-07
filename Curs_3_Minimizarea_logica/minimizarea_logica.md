@@ -260,15 +260,21 @@ Progrmaul Espresso are ca intrare un fisier in care se descrie circuitul ocmbina
 
 |fisierul de intrare | rezultate|
 |--------------------|----------
-| #exemplu 1 - ex1.txt <br> .i 4 <br> .o 1 <br> .ilb A B C D <br> .ob F <br> 0 0 0 0   0<br> .e | ```console <br> >>espresso ex1.txt| <br>```|
+| #exemplu 1 - ex1.txt <br> .i 4 <br> .o 1 <br> .ilb A B C D <br> .ob F <br> 0 0 0 0   0<br> <br> de completat din raportul lui CibuOana0<br>.e | ./espresso.exe ex ex1.txt <br> .i 4 <br> .o 1 <br> .ilb A B C D <br> .ob F <br> .p 2 <br> 100- 1 <br> 011- 1 <br>|
 
 Interpretarea rezultatului:
 .p 2 -> Indica faptul ca sunt doi termini in expresia de iesire
 100- 1 -> termenul este AB'C'. notatie: B' este B negat
 011- 1 -> termenul este  A'BC
-Expresia logica este  F = AB'C' + A'BC. 
 
+Expresia logica este  **F = AB'C' + A'BC**. 
 
+#### Exemplul 2
+de completat din raportul lui CibuOana
+#### Exemplul 3
+de completat din raportul lui CibuOana
+#### Exemplul 1
+de completat din raportul lui CibuOana
 
 ## Link-uri utile - Utilitare (sub windows) pentru minimizare logica:
 1. Minimizare euristica pe doua nivele [espresso](http://ramos.elo.utfsm.cl/~lsb/elo211/aplicaciones/aplicaciones/espresso/ESPRESSO%20Logic%20Minimization%20Software.htm)
