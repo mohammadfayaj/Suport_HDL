@@ -232,6 +232,31 @@ Matricea de incidenţǎ dintre implicanţii primi ai funcţiei şi termenii cano
 
 ## Minimizarea euristica
 
+În cazul circuitelor reale, mărimea de ordin a numărul variabilelor de intrare a unei funcţii booleene poate să ajungă la un ordin de 1000 sau și mai mare. Minimizarea euristică nu caută o acoperire minimă, ci o acoperire destul de bună. Minimizarea funcţiilor se face iterativ, prin aplicarea operatorilor de expandare, neredundanţă şi reducere.
+
+Operatori eurisitici:
+**Expandare**, acest operator calculează o acoperire primă şi minimală în raport cu conţinerea într-un singur implicant. Implicanţii care formează acoperirea sunt procesaţi rând pe rând. Fiecare implicant care nu este prim este expandat întrun implicant prim, adică este înlocuit printr- -un implicant prim care-l conţine.
+**Consecutiv**, toţi implicanţii din acoperire (cei încă ne-procesaţi) care sunt conţinuţi în acest implicant prim sunt îndepărtaţi.
+**Irredundant**, are drept acţiune calculul unei acoperiri iredundante. Operatorul alege un subset al implicanţilor astfel încât nici un implicant al acestui subset nu este acoperit de ceilalţi implicanţi din subset.
+**Reduce**, este un operator care realizează transformarea unei acoperiri oarecare, într-o acoperire ne-primă dar de aceeaşi cardinalitate cu cea iniţială. Implicanţii sunt procesaţi unul câte unul. Acest operator încearcă să înlocuiască fiecare implicant printr-un altul care este conţinut în acesta, cu condiţia că implicanţii reduşi împreună cu cei rămaşi continuă să acopere funcţia.
+
+Minimizatorul logic Espresso este un utilitar pentru minimizarea functiilor logice pe doua nivele, care foloseste minimizarea euristica. Espresso a fost dezvoltat la IBM de Robert K. Brayton.
+
+### Exemple de utilizare Espresso
+
+#### Exemplul 1.
+
+```text
+# comentariu
+.i 4 # variabile de intrare = 4
+.o 1 # variabile de iesire = 1
+.ilb A B C D # numele variabilelor de intrare
+.ob F # Numele variabilei de iesire
+0 0 0 0   0 (# tabelul de adevar, 4 intrari, o iesire)
+.e # Marcheaza sfarsitul fisierului
+```
+
+
 ## Link-uri utile - Utilitare (sub windows) pentru minimizare logica:
 1. Minimizare euristica pe doua nivele [espresso](http://ramos.elo.utfsm.cl/~lsb/elo211/aplicaciones/aplicaciones/espresso/ESPRESSO%20Logic%20Minimization%20Software.htm)
 2. Minimizare multinivel [ABC](http://www.ecs.umass.edu/ece/labs/vlsicad/ece667/links/abc.html)
