@@ -1,15 +1,31 @@
 library work;
-use work.list_pkg.all;
+
 
 entity test_list is
 end entity;
 
 architecture test of test_list is
-		shared variable my_list : LIST;
+
+		type est is record
+			power: real;
+			area: real;
+		end record; 
+		
+		procedure print_item (i : integer) is
+		begin
+			report integer'image(i);
+		end procedure;
+		
+		package integer_list is new work.list_pkg generic map (mytype => integer, print_item => print_item) ;
+		use integer_list.all;
+		
+		shared variable my_list : integer_list.LIST;
+		
 begin
 
 	process 
 		variable int : integer;
+		variable elem : est := (1.0,1.0);
 	begin
 
 		my_list.pushc(1);

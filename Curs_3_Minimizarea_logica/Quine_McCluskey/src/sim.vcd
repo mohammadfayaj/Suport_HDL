@@ -1,5 +1,5 @@
 $date
-  Thu Jan 16 17:36:42 2020
+  Fri Mar 06 16:29:13 2020
 $end
 $version
   GHDL v0
@@ -9,10 +9,6 @@ $timescale
 $end
 $scope module standard $end
 $upscope $end
-$scope module textio $end
-$upscope $end
-$scope module quine_mccluskey $end
-$upscope $end
-$scope module testbench_qm $end
+$scope module test_list $end
 $upscope $end
 $enddefinitions $end
