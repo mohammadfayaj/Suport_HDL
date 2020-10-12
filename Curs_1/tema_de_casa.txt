@@ -2,5 +2,5 @@
 2. Trimiteti numele utilizatorului pe botond.kirei@bel.utcluj.ro
 3. Asteptati invitatia la "Suport_HDL"
 4. Instalati utilitarul git  de pe https://git-scm.com/download/win
-5. Incercare
+5. Incercare - unu
 
