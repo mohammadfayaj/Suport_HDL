@@ -1,17 +1,4 @@
-1. Creati tilizator pe github.com
+1. Creati utilizator pe github.com
 2. Trimiteti numele utilizatorului pe botond.kirei@bel.utcluj.ro
-3. Asteptati invitatia la "suport_HDL"
+3. Asteptati invitatia la "Suport_HDL"
 4. Instalati utilitarul git  de pe https://git-scm.com/download/win
-<<<<<<< HEAD
-<<<<<<< HEAD
-5. Creati copia locala pe calculatorul d-voastra
-6. modificari
-
-
-
-=======
-5. Creati copia locala pe calculatorul d-voastra (git clone https://github.com/botondkirei/Suport_HDL.git)
->>>>>>> d6e8fd22da8a0c187ef2fe8c5baa4e3455a3161a
-=======
-5. Creati copia locala pe calculatorul d-voastra (git clone https://github.com/botondkirei/Suport_HDL.git)
->>>>>>> 2f97fe789c10fa5300f353d1f46f6e1637242d7b
