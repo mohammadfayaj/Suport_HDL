@@ -23,7 +23,7 @@ Funcționarea logică
 În general, când se vorbește despre circuite digitale, atunci este vorba de circuite care implementeaza funcții logice booleene (adică cu două nivele de adevăr: adevarat și fals) și folosesc baza binară pentru a reprezenta valorile numerice. Însă circuitele digitale  pot implementa și logică cu trei nivele, logice ternară, și să foloseasca alte baza pentru reprezentarea valorilor. 
 Notă: primul calculator ENIAC a folosit baza decimală pentru reprezentarea valorilor. 
 
-## Proiectarea sistemelor digitale
+## Proiectarea sistemelor digitale cu logică cablată su reconfigurabilă
 
 ### Metode de proiectare a sistemelor digitale
 1. Desenarea schemelor electronice utilizand un editor de circuite electronice (Orcad - Capture CIS)
