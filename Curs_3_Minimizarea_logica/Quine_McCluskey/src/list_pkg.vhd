@@ -18,6 +18,7 @@ package list_pkg is generic (type mytype;
 	
 	    procedure push( variable value : in mytype);
         procedure pushc( constant const : in mytype);
+        
 	    impure function pop return mytype;
         procedure show;
 	    

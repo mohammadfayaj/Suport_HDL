@@ -1,8 +1,10 @@
+
+
 -- Implemnetarea metodei Quine-McCluskey
 use std.textio.all;
 
 package quine_mccluskey is
-
+	
 	type ITEM;
 	
 	type ITEM_PTR is access ITEM;
@@ -10,49 +12,14 @@ package quine_mccluskey is
 	type ITEM is record
 		value : integer;
 		succ : ITEM_PTR;
+		impl : ITEM_PTR;
+		grp : ITEM_PTR;
+		col : ITEM_PTR;
 	end record ITEM;
-	
-	type IMPLICANT;
-	
-	type IMPLICANT_PTR is access IMPLICANT;
-	
-	type IMPLICANT is record
-		covered : ITEM_PTR;
-		size : integer;
-		used : boolean;
-		succ : IMPLICANT_PTR;
-	end record IMPLICANT;
-	
-	type GROUPS;
-	
-	type GROUPS_PTR is access GROUPS;
-	
-	type GROUPS is record
-		member : IMPLICANT_PTR;
-		order : integer;
-		succ : GROUPS_PTR;
-	end record GROUPS;
-	
-	type COLUMN;
-	
-	type COLUMN_PTR is access COLUMN;
-	
-	type COLUMN is record
-		member : GROUPS_PTR;
-		succ : COLUMN_PTR;
-	end record COLUMN;
-	
-	type TABLE;
-	
-	type TABLE_PTR is access TABLE;
-	
-	type TABLE is record
-		member : COLUMN_PTR;
-		succ : TABLE_PTR;
-	end record TABLE;
 	
 	type minimizer is protected
 
+		
 		procedure load_function(constant fisier_functie : string);
 		procedure order_function;
 		procedure get_prime_implicants;
@@ -70,7 +37,7 @@ end package;
 package body quine_mccluskey is
 
 	type minimizer is protected body 
-		variable myTable : TABLE;
+		variable currTable, currCol, currGrp, currImpl  : ITEM_PTR;
 		variable function_arg_num : integer;
 		variable function_implic_num : integer;
 		variable myFunction : ITEM_PTR;
@@ -82,7 +49,7 @@ package body quine_mccluskey is
 			Variable v_data_read  : integer;
 			Variable valoare      : integer; 
 			Variable ptr		  : ITEM_PTR;	
-			variable function_implic_num : integer;
+			--variable function_implic_num : integer;
 		begin
 			
 			-- Read line from file: 
@@ -146,6 +113,7 @@ package body quine_mccluskey is
 		end loop;
 		
 		end procedure;
+		 
 		
 		procedure order_function is
 			function get_order(valoare:integer) return integer is 	
@@ -162,79 +130,88 @@ package body quine_mccluskey is
 				return count;
 			end function;
 			
-			procedure existsOrderInColumn(variable col: in column_ptr; variable order :in integer; variable ret : out boolean) is
-				variable coloana : column_ptr;
-				variable isOrder : boolean := false;
+			
+			procedure addItem(variable ordinCurent, termenCurent : integer) is
+				variable col,grp,impl, term : item_ptr := null;
 			begin
-				coloana := col;
-				while coloana.member /= null loop
-					if coloana.member.order = order then
-						isOrder := true;
+				--loop through groups
+				currGrp := currCol.grp;
+				while currGrp /= null loop
+					report "am intrat in order_function/addItem/while!!!" severity note;			
+					if currGrp.value = ordinCurent then
+						exit;
+					elsif currGrp.value > ordinCurent then
+						exit;
 					end if;
+					currGrp := currGrp.grp;
 				end loop;
-				ret := isOrder;
+				if  currGrp = null then
+					report "am intrat in order_function/addItem/if!!!" severity note;
+					--group does not exists
+					grp := new ITEM;
+					grp.value := ordinCurent;
+					grp.impl := new ITEM;
+					impl := grp.impl;
+					impl.value := 1; --how many terms are covered
+					impl.succ := new ITEM;
+					term := impl.succ;
+					term.value := termenCurent;
+					term.succ := new ITEM;
+					term := term.succ;
+					term.value := 0; -- unused
+					grp.grp := currGrp;
+					currCol.grp := grp;
+				else
+					--insert term into existing group
+					--loop throuh the group;
+					impl := currGrp.impl;
+					while impl.succ /= null loop
+						report "am intrat in order_function/addItem/else.while!!!" severity note;
+						if impl.succ.value > termenCurent then
+							exit;
+						end if;
+						impl := impl.succ;
+					end loop;
+					currImpl := new ITEM;
+					currImpl.value := 1; -- covered terms
+					currImpl.succ := new ITEM;
+					term := currImpl.succ ;
+					term.value := termenCurent;
+					term.succ := new ITEM;
+					term := term.succ;
+					term.value := 0; -- used/unused flag
+					term.succ := currImpl.succ;
+					currImpl.succ := impl;
+					impl.succ := currImpl;
+				end if;
 			end procedure;
 			
-			procedure addItem(variable coloana: inout column_ptr; variable ordinCurent, termenCurent : integer) is
-				variable col : column_ptr;
-				variable grupe : groups_ptr;
-				variable termen : implicant_ptr;
-			begin
-				col := coloana;
-				while col.member.order /= ordinCurent loop
-					col.member := col.member.succ;
-				end loop;
-				grupe := col.member;
-				while grupe.member.covered.value < termenCurent loop
-				end loop;
-						
-			end procedure;
-			
-			variable coloana:column_ptr;
-			variable grupe, pointer_grupe : groups_ptr;
-			variable implicanti : implicant_ptr;
+			variable coloana:item_ptr;
+			variable grupe, pointer_grupe : item_ptr;
+			variable implicanti : item_ptr;
 			variable termeni : item_ptr;
 			variable ret : boolean;
 			variable termenCurent, ordinCurent : integer;
 		begin
 			--todo : compute the order of each implicant
 			-- create groups for each order
-			coloana := new column;
-			coloana.member:= null;
-			coloana.succ := null;
-			report "am intrat in order_function!!!" severity note;
-			termeni := testList;
+			currTable := new ITEM; 
+			assert currTable.col = null report "currTable.col /= null" severity note;
+			assert currTable.grp = null report "currTable.col /= null" severity note;
+			assert currTable.impl = null report "currTable.col /= null" severity note;
+			assert currTable.succ = null report "currTable.col /= null" severity note;
+			currTable.value := 1; -- no significance
+			currTable.col := new ITEM;
+			currCol := currTable.col ;
+			currCol.value := 1; -- first column
+			termeni := myFunction;
 			-- parcurge toti termeni din lista (pe moment lista de test)
-			while ( termeni /= null) loop
-				termenCurent := termeni.value;
-				report integer'image(termenCurent);
+			while ( termeni.succ /= null) loop
+				termenCurent := termeni.value;		
 				ordinCurent := get_order(termenCurent);
-				existsOrderInColumn(coloana,ordinCurent,ret); 
-				if ret then
-					addItem(coloana, ordinCurent, termenCurent);
-				else
-					-- creare grupa noua
-					grupe := new groups;
-					grupe.order:= ordinCurent;
-					grupe.succ:= null;
-					-- creare implicant nou
-					grupe.member := new Implicant;
-					grupe.member.succ := null;
-					grupe.member.size := 1;
-					--creare termen nou
-					grupe.member.covered := new Item;
-					grupe.member.covered.value := termenCurent;
-					grupe.member.covered.succ := null;
-
-					--inserare grupe la coloana 
-					pointer_grupe := coloana.member;
-					while pointer_grupe.succ /= null or pointer_grupe.succ.order > ordinCurent loop
-						pointer_grupe := pointer_grupe.succ;
-					end loop;
-					grupe.succ := pointer_grupe;
-					pointer_grupe := grupe;
-				end if;
-				
+				report "Ordin:" & integer'image(termenCurent) & "=" & integer'image(ordinCurent);
+				addItem(ordinCurent, termenCurent);
+				termeni := termeni.succ;
 			end loop;
 							
 		end procedure;				
